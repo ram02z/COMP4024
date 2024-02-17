@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class DebugObject : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Used to check that the Vocabulary persists between topic and game scenes
     void Start()
     {
         Debug.Log("Debug object start ran");
-        ObjectManager objectManager = FindObjectOfType<ObjectManager>();
+        Vocabulary vocabulary = FindObjectOfType<Vocabulary>();
 
-        if (objectManager != null)
+        if (vocabulary != null)
         {
-            Debug.Log("ObjectManager exists");
-            objectManager.PrintVocabToDebug();
+            Debug.Log("Vocabulary exists");
+            vocabulary.PrintToDebug();
         }
         else
         {
-            Debug.Log("ObjectManager does not exist");
+            Debug.Log("Vocabulary does not exist");
 
         }
     }

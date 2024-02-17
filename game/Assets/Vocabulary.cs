@@ -7,19 +7,36 @@ using UnityEngine;
 The Vocabulary object represnts a Dictionary of topics and their
 associated french/english translation pairs. It contains methods
 used for adding and removing topics, checking if a topic exists
-in the dictionary and printing itself to the debug log.
+in the dictionary and printing itself to the debug log. Vocabulary
+is a singleton class so that it can persist between scenes
  */
 public class Vocabulary : MonoBehaviour
 {
     public Dictionary<string, Dictionary<string, string>> vocabMap;
+    private static Vocabulary instance;
 
     /*
-     Instatiate a dictionary object named vocabMap: Dictionary<string, Dictionary<string, string>>
-    where vocabMap contains <topic name, Dictonary<french word, english word>>
+    Ensures that one and only one instance of the Vocabulary
+   exists and prevents this from being destroyed between scene changes
     */
-    public Vocabulary()
+    private void Awake()
     {
-        vocabMap = new Dictionary<string, Dictionary<string, string>>();
+        // Ensure only one instance exists
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            // Create the vocabMap
+            if (vocabMap == null)
+            {
+                vocabMap = new Dictionary<string, Dictionary<string, string>>();
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     /*
@@ -70,6 +87,45 @@ public class Vocabulary : MonoBehaviour
         return vocabMap.ContainsKey(topic);
     }
 
+    /*
+     When given a topic string this method will call upon
+    the FileUtil to read the corresponfing topic CSV file and
+    then add the this entry to the Vocabulary object.
+     */
+    private void AddTopicToVocabMap(string topic)
+    {
+        string csvFilepath = "Assets/CSV/" + topic;
+        Dictionary<string, string> csvValues = FileUtil.ReadCSVFile(csvFilepath);
+        AddTopicVocab(topic, csvValues);
+    }
+
+    /*
+     This method is called by topic Buttons. If the topic already
+    exists within the Vocabulary object then it is removed and false is returned.
+    If it does not exist then the topic CSV file is loaded, and the vocabulary
+    is added then true is returned.
+
+    */
+    public Boolean TopicButtonClicked(string topic)
+    {
+        if (!IsTopicInVocabulary(topic))
+        {
+            AddTopicToVocabMap(topic);
+            PrintToDebug();
+            return true;
+        }
+        else
+        {
+            RemoveTopicVocab(topic);
+            PrintToDebug();
+            return false;
+        }
+
+    }
+
+    /*
+     Prints the contents of the vocab dictionary to the debug log
+     */
     public void PrintToDebug()
     {
         if (vocabMap != null)

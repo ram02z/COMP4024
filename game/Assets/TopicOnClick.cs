@@ -7,19 +7,19 @@ topic the dynamically created topic buttons
 public class TopicOnClick : MonoBehaviour
 {
     /*
-     This method obtains a reference to the ObjectManager singleton
+     This method obtains a reference to the Vocabulary singleton
     and then calls the TopicButtonClicked method with the buttons
     name as the topic paramater
      */
     public void OnButtonClick()
     {
         Debug.Log("on click ran");
-        ObjectManager objectManager = FindObjectOfType<ObjectManager>();
+        Vocabulary vocabulary = FindObjectOfType<Vocabulary>();
 
-        if (objectManager != null)
+        if (vocabulary != null)
         {
             Debug.Log("Button clicked");
-            objectManager.TopicButtonClicked(gameObject.name);
+            vocabulary.TopicButtonClicked(gameObject.name);
         }
         else
         {

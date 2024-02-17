@@ -74,4 +74,9 @@ public class ObjectManager : MonoBehaviour
         }
 
     }
+
+    public void PrintVocabToDebug()
+    {
+        vocabMap.PrintToDebug();
+    }
 }

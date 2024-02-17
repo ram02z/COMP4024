@@ -3,48 +3,41 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- This class will be responsible for dynamically generating topic buttons
+The ButtonManger class is used to populate the scroll view with
+topic buttons, which correspond to the vocabulary CSV files.
  */
 public class ButtonManager : MonoBehaviour
 {
-    // Reference to the button prefab (Button) used to give a template for
-    //.Button generation
+    // Reference to the button prefab used for Button instatiation
     public GameObject buttonPrefab;
-    // The canvas on which to generate the dynamic button objects
-    public Canvas canvas;
+    // The content parameter of the scroll view on which to instatiate buttons
+    public Transform contentTransform;
 
     /*
-    The start method will dynamically generate buttons
-    for each topic using the filenames present in the CSV folder
+    This method obtains a list of CSV filenames from the FileUtil. For each
+    name a new button is created, with the filename as the button text and
+    button name.
      */
     void Start()
     {
-        // Performing some debugging to check that the FileUtil REadCSVFile method works
-        // Correctly
-        string filePath = "Assets/CSV/Access";
-        Dictionary<string, string> csvData = FileUtil.ReadCSVFile(filePath);
-
-        // Instantiate a new Button object
-        CreateButton("new button");
+        List<string> csvFiles = FileUtil.GetFileNames();
+        
+        foreach(string topic in csvFiles)
+        {
+            CreateButton(topic);
+        }
     }
 
     /*
-     Generates a new Button with with the given text displayed
+     Creates a new button object with text and name [properties equal to
+    buttonText.
      */
     void CreateButton(string buttonText)
     {
-        GameObject buttonObject = Instantiate(buttonPrefab, canvas.transform);
+        GameObject buttonObject = Instantiate(buttonPrefab, contentTransform);
         buttonObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(50f, 50f);
-        Button buttonComponent = buttonObject.GetComponent<Button>();
+        UnityEngine.UI.Button buttonComponent = buttonObject.GetComponent<UnityEngine.UI.Button>();
         buttonComponent.GetComponentInChildren<Text>().text = buttonText;
-        buttonComponent.onClick.AddListener(() => ButtonClick(buttonText));
-    }
-
-    /*
-     Place holder for the buttons on click method
-     */
-    void ButtonClick(string buttonText)
-    {
-        Debug.Log("Button Clicked: " + buttonText);
+        buttonObject.name = buttonText;
     }
 }

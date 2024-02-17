@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 5887426781707509891}
   - component: {fileID: 5502707279387100657}
   - component: {fileID: 4697240337486842797}
+  - component: {fileID: -4023028897985581822}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -200,9 +201,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonAction, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: -4023028897985581822}
+        m_TargetAssemblyTypeName: TopicOnClick, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -212,3 +213,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-4023028897985581822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218673561225234586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628313220b1b73341b91bacd4b1db047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

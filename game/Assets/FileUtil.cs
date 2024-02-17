@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Linq;
 
 /*
- This will be a helper class to perform IO operations such as
-reading vocabulary csv files and listing filenames
+ This is a helper class used to perform IO operations such as
+reading vocabulary CSV files and listing filenames
 */
 public class FileUtil:MonoBehaviour
 {
@@ -41,5 +42,25 @@ public class FileUtil:MonoBehaviour
         }
 
         return vocabulary;
+    }
+
+    /*
+     Returns a list of all the filenames in the CSV directory
+    */
+    public static List<string> GetFileNames() {
+        string directoryPath = "Assets/CSV";
+
+            if (Directory.Exists(directoryPath))
+            {
+                List<string> filePaths = Directory.GetFiles(directoryPath).ToList();
+                List<string> fileNames = new List<string>();
+                fileNames = filePaths.Where(filePath => !filePath.EndsWith(".meta")).Select(Path.GetFileName).ToList();
+
+            return fileNames;
+            }
+            else{
+                Debug.LogError("Directory does not exist: " + directoryPath);
+                return null;
+            }
     }
 }

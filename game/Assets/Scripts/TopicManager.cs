@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
-The ButtonManger class is used to populate the scroll view with
+The TopicManager class is used to populate the scroll view with
 topic buttons, which correspond to the vocabulary CSV files.
  */
-public class ButtonManager : MonoBehaviour
+public class TopicManager : MonoBehaviour
 {
     // Reference to the button prefab used for Button instatiation
     public GameObject buttonPrefab;

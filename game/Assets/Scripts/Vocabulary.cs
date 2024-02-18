@@ -16,6 +16,16 @@ public class Vocabulary : MonoBehaviour
     private static Vocabulary instance;
 
     /*
+     Instatiates a Dictionary object for the vocabMap member variable.
+    This is primarily required for testing as access to the awake method
+    is restricted
+     */
+    public void SetupVocabMap()
+    {
+        vocabMap = new Dictionary<string, Dictionary<string, string>>();
+    }
+
+    /*
     Ensures that one and only one instance of the Vocabulary
    exists and prevents this from being destroyed between scene changes
     */
@@ -30,7 +40,7 @@ public class Vocabulary : MonoBehaviour
             // Create the vocabMap
             if (vocabMap == null)
             {
-                vocabMap = new Dictionary<string, Dictionary<string, string>>();
+                SetupVocabMap();
             }
         }
         else
@@ -65,7 +75,6 @@ public class Vocabulary : MonoBehaviour
             Debug.Log("removing......");
             vocabMap.Remove(topic);
         }
-        IsTopicInVocabulary(topic);
     }
 
     /*
@@ -83,6 +92,7 @@ public class Vocabulary : MonoBehaviour
     */
     public Boolean IsTopicInVocabulary(string topic)
     {
+        Debug.Log("IsTopicInVocabulary: called");
         Debug.Log("IsTopicInVocabulary: " + vocabMap.ContainsKey(topic));
         return vocabMap.ContainsKey(topic);
     }

@@ -39,6 +39,7 @@ public class FileUtil:MonoBehaviour
         catch (IOException e)
         {
             Debug.LogError($"Error reading CSV file: {e.Message}");
+            throw;
         }
 
         return vocabulary;

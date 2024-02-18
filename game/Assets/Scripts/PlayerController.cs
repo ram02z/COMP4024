@@ -28,8 +28,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Instantiate(explosionPrefab, other.transform.position, Quaternion.identity);
-            Destroy(other.gameObject);
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

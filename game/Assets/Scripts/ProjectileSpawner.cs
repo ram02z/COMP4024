@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectSpawner : MonoBehaviour
+public class ProjectileSpawner : MonoBehaviour
 {
     public GameObject enemyProjectilePrefab;
     public float spawnTimer;

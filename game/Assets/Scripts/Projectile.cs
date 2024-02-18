@@ -7,10 +7,11 @@ public class Projectile : MonoBehaviour
 {
     public float moveSpeed = 7f;
     public GameObject explosionPrefab;
+    private PointManager pointManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class Projectile : MonoBehaviour
             // Instantiate an explosion at the position of the ship
             Instantiate(explosionPrefab, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
+            pointManager.UpdateScore(5);
             Destroy(gameObject);
         }
         if (other.gameObject.CompareTag("Boundary"))

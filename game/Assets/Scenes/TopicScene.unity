@@ -251,7 +251,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 775513528}
   m_HandleRect: {fileID: 775513527}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -928,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -329, y: 177.49954}
+  m_AnchoredPosition: {x: -329, y: 177.49998}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1894965125
@@ -1098,6 +1098,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1301776278633152255, guid: fa09ccb292793b343b38ba8651210977, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301776278633152255, guid: fa09ccb292793b343b38ba8651210977, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 16519a3035ee9ae42bde386d80f1dd31, type: 3}
+    - target: {fileID: 1301776278633152255, guid: fa09ccb292793b343b38ba8651210977, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2289111337903457466, guid: fa09ccb292793b343b38ba8651210977, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1194,7 +1206,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -208.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8657524347494411669, guid: fa09ccb292793b343b38ba8651210977, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1895644944909960417, guid: fa09ccb292793b343b38ba8651210977, type: 3}
     - {fileID: 6858700459182253155, guid: fa09ccb292793b343b38ba8651210977, type: 3}

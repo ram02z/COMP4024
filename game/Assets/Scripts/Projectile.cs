@@ -23,7 +23,8 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            // Instantiate an explosion at the position of the ship
+            Instantiate(explosionPrefab, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

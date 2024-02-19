@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System.Collections.Generic; 
 
 public class SpaceShooterGame : MonoBehaviour
 {
@@ -13,25 +15,38 @@ public class SpaceShooterGame : MonoBehaviour
     private float meteorSpawnInterval = 1f;
     private float gameTime = 120f;
 
-    private float timer = 0f;
+    private float meteorSpawnTimer = 0f;
+    private float meteorTextTimer = 0f;
     private int score = 0;
     private bool gameRunning = true;
 
+    private int lastMeteorDrop = 50; // arbitrary large numbert 'unlikely' to cause a clash on the first run
+    private int secondlastMeteorDrop = 100; // same reasoning as previous
+    private int correctTextThreshold; // every 4-7 meteors, the correct translation will be displayed
     private float lastFireTime = 0f;
     private float fireInterval = 0.5f;
 
     private Text scoreText;
     private Text timerText;
-    private Text meteorText;
-    private int[] randomNumbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    private Text wordText;
+    private string[] words = {"1","2","3","4","5","6","7","8","9","10"}; // to be replaced by english-french translation pairs from text files, dynamically loaded depending on which themes are selected
+    private Queue<string> wordQueue = new Queue<string>();
 
     void Start()
     {
         scoreText = GameObject.Find("scoreText").GetComponent<Text>();
         timerText = GameObject.Find("timerText").GetComponent<Text>();
+        wordText = GameObject.Find("wordText").GetComponent<Text>();
+        correctTextThreshold = Random.Range(4,8);
+
+        for (int word = 0; word < words.Length; word++)
+        {
+            wordQueue.Enqueue(words[word]);
+        }
 
         UpdateScoreUI();
         UpdateTimeUI();
+        UpdateWordUI();
     }
 
     void Update()
@@ -53,11 +68,19 @@ public class SpaceShooterGame : MonoBehaviour
         }
 
         // Meteor spawning interval
-        timer += Time.deltaTime;
-        if (timer >= meteorSpawnInterval)
+        meteorTextTimer += Time.deltaTime;
+        meteorSpawnTimer += Time.deltaTime;  
+        if (meteorSpawnTimer >= meteorSpawnInterval)
         {
-            timer = 0f;
-            SpawnMeteor();
+            meteorSpawnTimer = 0f;
+            if (meteorTextTimer >= correctTextThreshold)
+            {
+                meteorTextTimer = 0f;
+                correctTextThreshold = Random.Range(4, 8);
+                SpawnMeteor(true);
+            }
+            else
+                SpawnMeteor(false);
         }
 
         DetectCollision();
@@ -84,25 +107,56 @@ public class SpaceShooterGame : MonoBehaviour
         Destroy(newProjectile, 3f);
     }
 
-    void SpawnMeteor()
+    void SpawnMeteor(bool wordType) //wordType determines whether the spawned meteor will/ won't have the correct translation on it
     {
-        float screenWidth = Camera.main.aspect * Camera.main.orthographicSize;
-        float randomX = Random.Range(-screenWidth + 0.5f, screenWidth - 0.5f);
-        float randomY = Camera.main.orthographicSize + 2f; // Add 2f to ensure meteors spawn above the screen
+        // Calculate meteor drop location Y
+        float Y = Camera.main.orthographicSize + 2f; // Add 2f to ensure meteors spawn above the screen
 
         // Instantiate the meteor prefab
-        GameObject newMeteor = Instantiate(meteorPrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+        GameObject newMeteor = Instantiate(meteorPrefab, Vector3.zero, Quaternion.identity);
 
-        // Find the Text component in the Canvas child of the meteor
-        meteorText = GameObject.Find("Word").GetComponent<Text>();
+        // Calculate meteor size
+        float meteorSize = newMeteor.GetComponent<SpriteRenderer>().bounds.size.x;
 
-        // Select a random number from the array and set it as the text of the Word object in the meteor's canvas
-        int randomIndex = Random.Range(0, randomNumbers.Length);
-        int randomNumber = randomNumbers[randomIndex];
-        if (meteorText != null)
+        // Find the TextMeshPro component in the Canvas child of the meteor
+        TextMeshPro meteorText = newMeteor.GetComponentInChildren<TextMeshPro>();
+
+        // Set the position of the text to match the meteor's position
+        Vector3 textPosition = new Vector3(newMeteor.transform.position.x, newMeteor.transform.position.y, 0f);
+        meteorText.transform.position = textPosition;
+
+        // Calculate meteor drop location X
+        float screenWidth = Camera.main.aspect * Camera.main.orthographicSize * 2;
+        int numOfColumns = (int)(screenWidth / meteorSize);
+        int negColumns = -numOfColumns / 2;
+        int posColumns = numOfColumns / 2;
+
+        // Calculate drop location X
+        int randomX = Random.Range(negColumns, posColumns);
+        while (randomX == lastMeteorDrop || randomX == secondlastMeteorDrop)
         {
-            meteorText.text = randomNumber.ToString();
+            randomX = Random.Range(negColumns, posColumns);
         }
+        float dropLocationX = randomX * meteorSize;
+
+        // Adjust drop location for the centre of the meteor
+        dropLocationX += meteorSize / 2;
+
+        // Set the position of the meteor
+        newMeteor.transform.position = new Vector3(dropLocationX, Y, 0f);
+
+        // Re-shuffle previous meteor locations
+        secondlastMeteorDrop = lastMeteorDrop;
+        lastMeteorDrop = randomX;
+
+        // Decide whether meteor text should be correct translation or not - based on wordType flag
+        if (wordType)
+            meteorText.text = wordText.text;
+        else
+            meteorText.text = words[Random.Range(0, words.Length)];
+        
+        // Adjust the position of the text to be relative to the meteor
+        meteorText.transform.localPosition = new Vector3(0f, 0f, 0f);
 
         // Set up the rigidbody and velocity for the meteor
         Rigidbody2D rb = newMeteor.GetComponent<Rigidbody2D>();
@@ -110,15 +164,13 @@ public class SpaceShooterGame : MonoBehaviour
         rb.velocity = Vector2.down * meteorSpeed;
 
         // Destroy the meteor after a certain time
-        Destroy(newMeteor, 6f);
-    }
+        Destroy(newMeteor, 4f);
+}
 
-
-    void EndGame()
+void EndGame()
     {
         gameRunning = false;
-        Debug.Log("Game Over!");
-        // Add end game logic
+        Application.Quit(); // To be replaced with a popup displaying score, correct and incorrect meteors hit
     }
 
     void DetectCollision()
@@ -141,21 +193,34 @@ public class SpaceShooterGame : MonoBehaviour
 
     void CollisionDetected(GameObject meteor, GameObject projectile)
     {
+        // Get the TextMeshPro component from the meteor
+        TextMeshPro meteorText = meteor.GetComponentInChildren<TextMeshPro>();
+
+        if (meteorText.text.Equals(wordText.text))
+        {
+            IncreaseScore();
+            ChangeWord();
+        }
+        else
+            DecreaseScore();
         Destroy(meteor);
         Destroy(projectile);
-        IncreaseScore();
     }
 
 
     void UpdateTime()
     {
-        gameTime -= Time.deltaTime;
-        UpdateTimeUI();
+        if (!gameRunning)
+            return;
 
+        gameTime -= Time.deltaTime;
         if (gameTime <= 0)
         {
+            gameTime = 0;
             EndGame();
         }
+
+        UpdateTimeUI();
     }
 
     void IncreaseScore()
@@ -166,8 +231,11 @@ public class SpaceShooterGame : MonoBehaviour
 
     void DecreaseScore()
     {
-        score -= 5; 
-        UpdateScoreUI();
+        if (score != 0)
+        {
+            score -= 5;
+            UpdateScoreUI();
+        }
     }
 
     void UpdateScoreUI()
@@ -180,5 +248,19 @@ public class SpaceShooterGame : MonoBehaviour
         int minutes = Mathf.FloorToInt(gameTime / 60);
         int seconds = Mathf.FloorToInt(gameTime % 60);
         timerText.text = $"Time: {minutes:00}:{seconds:00}";
+    }
+
+    void UpdateWordUI()
+    {
+        wordText.text = wordQueue.Peek();
+    }
+
+    void ChangeWord()
+    {
+        string word = wordQueue.Peek();
+        wordQueue.Dequeue();
+        wordQueue.Enqueue(word);
+        word = wordQueue.Peek();
+        wordText.text = word;
     }
 }

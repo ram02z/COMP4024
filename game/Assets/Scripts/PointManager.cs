@@ -7,7 +7,7 @@ public class PointManager : MonoBehaviour
     public int score;
     public TMP_Text scoreText;
     public TMP_Text timeText;
-    public WordManager wordManager;
+    private WordManager wordManager;
     private float _timeRemaining = 120f;
     
     void Start()
@@ -28,6 +28,11 @@ public class PointManager : MonoBehaviour
             UpdateTimeUI();
         }
         
+        EndGame();
+    }
+    
+    private void EndGame()
+    {
         Application.Quit();
     }
     

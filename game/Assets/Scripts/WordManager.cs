@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,8 +5,9 @@ using UnityEngine;
 public class WordManager : MonoBehaviour
 {
     public TMP_Text wordText;
-    private string[] words = {"1","2","3","4","5","6","7","8","9","10"}; // to be replaced by english-french translation pairs from text files, dynamically loaded depending on which themes are selected
-    private Queue<string> wordQueue = new Queue<string>();
+    // TODO: to be replaced by english-french translation pairs from text files, dynamically loaded depending on which themes are selected
+    private string[] words = {"1","2","3","4","5","6","7","8","9","10"};
+    private Queue<string> wordQueue = new();
     
     // Start is called before the first frame update
     void Start()

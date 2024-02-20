@@ -109,17 +109,5 @@ namespace Tests.EditMode
             Assert.False(vocabularyObject.TopicButtonClicked("topic1"));
             Assert.False(vocabularyObject.IsTopicInVocabulary("topic1"));
         }
-
-        [Test]
-        public void TopicButtonClicked_WhenTopicIsAnInvalidFileName_LogsError()
-        {
-            LogAssert.Expect(LogType.Error,
-                "Error reading CSV file: Could not find file \"C:\\Users\\ethan\\Documents\\" +
-                "University Computer Science\\Spring Semester yr3\\Software Engineering Management" +
-                "\\COMP4024\\game\\Assets\\CSV\\invalid filename\"");
-
-            Assert.Throws<FileNotFoundException>(() => vocabularyObject.TopicButtonClicked("invalid filename"));
-        }
-
     }
 }

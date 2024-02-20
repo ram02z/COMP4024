@@ -32,7 +32,9 @@ public class WordManager : MonoBehaviour
 
     public void ChangeWord()
     {
+        string word = wordQueue.Peek();
         wordQueue.Dequeue();
+        wordQueue.Enqueue(word);
         UpdateWordUI();
     }
 

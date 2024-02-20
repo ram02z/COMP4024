@@ -5,21 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float hInput;
+    public float moveSpeed = 15f;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        // Move the ship to the right
-        hInput = Input.GetAxisRaw("Horizontal");
+        // Collect spaceship movement input
+        float hInput = Input.GetAxis("Horizontal");
         
+        // Move the ship to the right
         transform.Translate(Vector2.right * (Time.deltaTime * hInput * moveSpeed));
     }
 

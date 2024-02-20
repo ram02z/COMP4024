@@ -46,7 +46,6 @@ public class SpaceShooterGame : MonoBehaviour
 
         UpdateScoreUI();
         UpdateTimeUI();
-        UpdateWordUI();
     }
 
     void Update()

@@ -26,8 +26,8 @@ public class Projectile : MonoBehaviour
         {
             // Instantiate an explosion at the position of the ship
             Instantiate(explosionPrefab, other.transform.position, Quaternion.identity);
+            pointManager.UpdateScore(other.gameObject);
             Destroy(other.gameObject);
-            pointManager.UpdateScore(5);
             Destroy(gameObject);
         }
         if (other.gameObject.CompareTag("Boundary"))

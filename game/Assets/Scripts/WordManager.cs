@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class WordManager : MonoBehaviour
+{
+    public TMP_Text wordText;
+    private string[] words = {"1","2","3","4","5","6","7","8","9","10"}; // to be replaced by english-french translation pairs from text files, dynamically loaded depending on which themes are selected
+    private Queue<string> wordQueue = new Queue<string>();
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        for (int word = 0; word < words.Length; word++)
+        {
+            wordQueue.Enqueue(words[word]);
+        }
+        UpdateWordUI();
+        
+    }
+
+    void UpdateWordUI()
+    {
+        wordText.text = GetCurrentWord();
+    }
+    
+    public string GetCurrentWord()
+    {
+        return wordQueue.Peek();
+    }
+
+    public void ChangeWord()
+    {
+        wordQueue.Dequeue();
+        UpdateWordUI();
+    }
+
+    public string GetRandomWord()
+    {
+        return words[Random.Range(0, words.Length)];
+    }
+}

@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    public float speed = 7f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed = 2.5f;
 
     // Update is called once per frame
     void Update()

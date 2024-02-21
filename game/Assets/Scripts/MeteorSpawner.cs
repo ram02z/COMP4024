@@ -1,29 +1,28 @@
-using System;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
+// This class is responsible for spawning meteors in the game.
 public class MeteorSpawner : MonoBehaviour
 {
-    public GameObject meteorPrefab;
-    public float meteorSpeed = 2.5f;
-    public float meteorSpawnInterval = 1f;
-    public TMP_Text wordText;
-    private float meteorSpawnTimer = 0f;
-    private float meteorTextTimer = 0f;
-    private int lastMeteorDrop = 50; // arbitrary large number 'unlikely' to cause a clash on the first run
-    private int secondlastMeteorDrop = 100; // same reasoning as previous
-    private int correctTextThreshold; // every 4-7 meteors, the correct translation will be displayed
-    private WordManager wordManager;
+    public GameObject meteorPrefab; // The meteor prefab to be spawned.
+    public float meteorSpawnInterval = 1f; // The interval at which meteors are spawned.
+    public TMP_Text wordText; // The text that will be displayed on the meteor.
+    private float meteorSpawnTimer = 0f; // Timer to control the spawning of meteors.
+    private float meteorTextTimer = 0f; // Timer to control the display of text on the meteors.
+    private int lastMeteorDrop = 50; // The last position where a meteor was dropped.
+    private int secondlastMeteorDrop = 100; // The second last position where a meteor was dropped.
+    private int correctTextThreshold; // The threshold for displaying the correct translation on the meteor.
+    private WordManager wordManager; // Reference to the WordManager component.
 
+    // This method is called at the start of the game.
     public void Start()
     {
         wordManager = GameObject.Find("WordManager").GetComponent<WordManager>();
         correctTextThreshold = Random.Range(4, 8);
     }
 
+    // This method is called once per frame.
     void Update()
     {
         // Meteor spawning interval
@@ -42,11 +41,13 @@ public class MeteorSpawner : MonoBehaviour
                 SpawnMeteor(false);
         }
     }
-     // wordType determines whether the spawned meteor will/ won't have the correct translation on it
+
+    // This method spawns a meteor.
+    // wordType determines whether the spawned meteor will/ won't have the correct translation on it
     void SpawnMeteor(bool wordType)
     {
         // Calculate meteor drop location Y
-        float Y = Camera.main.orthographicSize + 2f; // Add 2f to ensure meteors spawn above the screen
+        float y = Camera.main.orthographicSize + 2f; // Add 2f to ensure meteors spawn above the screen
 
         // Instantiate the meteor prefab
         GameObject newMeteor = Instantiate(meteorPrefab, Vector3.zero, Quaternion.identity);
@@ -79,7 +80,7 @@ public class MeteorSpawner : MonoBehaviour
         dropLocationX += meteorSize / 2;
 
         // Set the position of the meteor
-        newMeteor.transform.position = new Vector3(dropLocationX, Y, 0f);
+        newMeteor.transform.position = new Vector3(dropLocationX, y, 0f);
 
         // Re-shuffle previous meteor locations
         secondlastMeteorDrop = lastMeteorDrop;

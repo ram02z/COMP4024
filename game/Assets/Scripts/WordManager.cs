@@ -2,14 +2,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+// This class is responsible for managing the words that are displayed in the game.
 public class WordManager : MonoBehaviour
 {
-    public TMP_Text wordText;
+    public TMP_Text wordText; // The text object that displays the current word.
     // TODO: to be replaced by english-french translation pairs from text files, dynamically loaded depending on which themes are selected
-    private string[] words = {"1","2","3","4","5","6","7","8","9","10"};
-    private Queue<string> wordQueue = new();
-    
-    // Start is called before the first frame update
+    private string[] words = {"1","2","3","4","5","6","7","8","9","10"}; // The array of words.
+    private Queue<string> wordQueue = new(); // The queue of words.
+
+    // This method is called at the start of the game.
+    // It enqueues all the words into the wordQueue and updates the wordText.
     void Start()
     {
         for (int word = 0; word < words.Length; word++)
@@ -17,19 +19,21 @@ public class WordManager : MonoBehaviour
             wordQueue.Enqueue(words[word]);
         }
         UpdateWordUI();
-        
     }
 
+    // This method updates the wordText with the current word from the wordQueue.
     void UpdateWordUI()
     {
         wordText.text = GetCurrentWord();
     }
-    
+
+    // This method returns the current word from the wordQueue.
     public string GetCurrentWord()
     {
         return wordQueue.Peek();
     }
 
+    // This method changes the current word in the wordQueue and updates the wordText.
     public void ChangeWord()
     {
         string word = wordQueue.Peek();
@@ -38,6 +42,7 @@ public class WordManager : MonoBehaviour
         UpdateWordUI();
     }
 
+    // This method returns a random word from the words array.
     public string GetRandomWord()
     {
         return words[Random.Range(0, words.Length)];

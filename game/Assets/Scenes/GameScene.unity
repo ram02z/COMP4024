@@ -287,7 +287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorPrefab: {fileID: 8086944817994473438, guid: cacc4387edb48124b9e11ddf80d33d29, type: 3}
-  meteorSpeed: 2.5
   meteorSpawnInterval: 1
   wordText: {fileID: 37045227}
 --- !u!4 &88053698
@@ -751,6 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6098374522450947899, guid: af2d1d1c7b47f0847ad5571c5f2399c9, type: 3}
+  fireRate: 0.5
 --- !u!61 &1136301453
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1066,6 +1066,7 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 895307454}
   timeText: {fileID: 1249675066}
+  projectile: {fileID: 8949806632829317135, guid: af2d1d1c7b47f0847ad5571c5f2399c9, type: 3}
 --- !u!4 &1609324196
 Transform:
   m_ObjectHideFlags: 0

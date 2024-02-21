@@ -28,9 +28,10 @@ public class TimeManager : MonoBehaviour
         EndGame();
     }
     
-    // This method ends the game.
+    // This method ends the game and goes to the Topic Scene.
     private void EndGame()
     {
-        Application.Quit();
+        // TODO: Go to game over scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TopicScene");
     }
 }

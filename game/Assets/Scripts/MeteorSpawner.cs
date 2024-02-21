@@ -7,7 +7,6 @@ public class MeteorSpawner : MonoBehaviour
 {
     public GameObject meteorPrefab; // The meteor prefab to be spawned.
     public float meteorSpawnInterval = 1f; // The interval at which meteors are spawned.
-    public TMP_Text wordText; // The text that will be displayed on the meteor.
     private float meteorSpawnTimer = 0f; // Timer to control the spawning of meteors.
     private float meteorTextTimer = 0f; // Timer to control the display of text on the meteors.
     private int lastMeteorDrop = 50; // The last position where a meteor was dropped.
@@ -88,7 +87,7 @@ public class MeteorSpawner : MonoBehaviour
 
         // Decide whether meteor text should be correct translation or not - based on wordType flag
         if (wordType)
-            meteorText.text = wordText.text;
+            meteorText.text = wordManager.GetCurrentWord();
         else
             meteorText.text = wordManager.GetRandomWord();
 

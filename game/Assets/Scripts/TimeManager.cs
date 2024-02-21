@@ -17,7 +17,7 @@ public class TimeManager : MonoBehaviour
     }
 
     // This coroutine starts the game timer.
-    IEnumerator StartTimer()
+    public IEnumerator StartTimer()
     {
         while (timeRemaining > 0)
         {

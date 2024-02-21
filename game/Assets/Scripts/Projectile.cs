@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 // This class is responsible for the behavior of the projectiles in the game.
 public class Projectile : MonoBehaviour
@@ -7,7 +6,7 @@ public class Projectile : MonoBehaviour
     public float moveSpeed = 7f; // The speed at which the projectile moves.
     public GameObject explosionPrefab; // The prefab for the explosion that occurs when the projectile hits an enemy.
     private PointManager _pointManager; // Reference to the PointManager component.
-    public static EnemyHitEvent onEnemyHit = new(); // The event that is invoked when the projectile hits an enemy.
+    public static readonly EnemyHitEvent OnEnemyHit = new(); // The event that is invoked when the projectile hits an enemy.
 
     // This method is called once per frame.
     // It moves the projectile upwards at a speed determined by moveSpeed.
@@ -25,7 +24,7 @@ public class Projectile : MonoBehaviour
         {
             // Instantiate an explosion at the position of the ship
             Instantiate(explosionPrefab, other.transform.position, Quaternion.identity);
-            onEnemyHit.Invoke(other.gameObject);
+            OnEnemyHit.Invoke(other.gameObject);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

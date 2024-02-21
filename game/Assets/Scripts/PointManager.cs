@@ -16,7 +16,7 @@ public class PointManager : MonoBehaviour
     {
         score = 0;
         _wordManager = GameObject.Find("WordManager").GetComponent<WordManager>();
-        Projectile.onEnemyHit.AddListener(UpdateScore);
+        Projectile.OnEnemyHit.AddListener(UpdateScore);
         UpdateScoreUI();
         UpdateTimeUI();
         StartCoroutine(StartTimer());

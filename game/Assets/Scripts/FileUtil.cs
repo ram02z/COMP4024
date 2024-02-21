@@ -38,7 +38,7 @@ public class FileUtil:MonoBehaviour
         }
         catch (IOException e)
         {
-            Debug.LogError($"Error reading CSV file: {e.Message}");
+            Debug.Log($"Error reading CSV file: {e.Message}");
         }
 
         return vocabulary;
@@ -47,9 +47,7 @@ public class FileUtil:MonoBehaviour
     /*
      Returns a list of all the filenames in the CSV directory
     */
-    public static List<string> GetFileNames() {
-        string directoryPath = "Assets/CSV";
-
+    public static List<string> GetFileNames(string directoryPath) {
             if (Directory.Exists(directoryPath))
             {
                 List<string> filePaths = Directory.GetFiles(directoryPath).ToList();
@@ -59,7 +57,7 @@ public class FileUtil:MonoBehaviour
             return fileNames;
             }
             else{
-                Debug.LogError("Directory does not exist: " + directoryPath);
+                Debug.Log("Directory does not exist: " + directoryPath);
                 return null;
             }
     }

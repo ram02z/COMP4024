@@ -46,7 +46,7 @@ public class MeteorSpawner : MonoBehaviour
     void SpawnMeteor(bool wordType)
     {
         // Calculate meteor drop location Y
-        float y = Camera.main.orthographicSize + 2f; // Add 2f to ensure meteors spawn above the screen
+        float y = Camera.main.orthographicSize + 1f; // Add 1f to ensure meteors spawn above the screen
 
         // Instantiate the meteor prefab
         GameObject newMeteor = Instantiate(meteorPrefab, Vector3.zero, Quaternion.identity);

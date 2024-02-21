@@ -299,6 +299,35 @@ namespace Tests.PlayMode
             yield return null;
         }
         
+        [UnityTest]
+        public IEnumerator EnemyGetsDestroyedWhenTouchesPlayer()
+        {
+            // Wait for an enemy GameObject to spawn.
+            yield return new WaitUntil(() => GameObject.FindWithTag("Enemy") != null);
+
+            // Get the enemy GameObject.
+            var enemy = GameObject.FindWithTag("Enemy");
+            Assert.IsNotNull(enemy, "Enemy GameObject not found");
+
+            // Get the player GameObject.
+            var player = GameObject.FindWithTag("Player");
+            Assert.IsNotNull(player, "Player GameObject not found");
+
+            // Move the player to the position of the enemy.
+            player.transform.position = enemy.transform.position;
+
+            // Wait for a short period of time to allow the player to collide with the enemy.
+            yield return new WaitForSeconds(0.5f);
+
+            // Check if the enemy GameObject is still in the scene.
+            var isEnemyDestroyed = enemy == null;
+
+            // Assert that the enemy GameObject is null.
+            Assert.IsTrue(isEnemyDestroyed, "Enemy GameObject was not destroyed");
+
+            yield return null;
+        }
+        
         [TearDown]
         public override void TearDown()
         {

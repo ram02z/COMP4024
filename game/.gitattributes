@@ -1,5 +1,3 @@
-﻿## Unity ##
-
-*.cs diff=csharp text
+﻿*.cs diff=csharp text
 *.cginc text
 *.shader text

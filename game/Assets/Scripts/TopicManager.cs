@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
-The ButtonManger class is used to populate the scroll view with
+The TopicManager class is used to populate the scroll view with
 topic buttons, which correspond to the vocabulary CSV files.
  */
-public class ButtonManager : MonoBehaviour
+public class TopicManager : MonoBehaviour
 {
     // Reference to the button prefab used for Button instatiation
     public GameObject buttonPrefab;
@@ -18,9 +18,9 @@ public class ButtonManager : MonoBehaviour
     name a new button is created, with the filename as the button text and
     button name.
      */
-    void Start()
+    public void Start()
     {
-        List<string> csvFiles = FileUtil.GetFileNames();
+        List<string> csvFiles = FileUtil.GetFileNames("Assets/CSV");
         
         foreach(string topic in csvFiles)
         {
@@ -32,7 +32,7 @@ public class ButtonManager : MonoBehaviour
      Creates a new button object with text and name [properties equal to
     buttonText.
      */
-    void CreateButton(string buttonText)
+    public void CreateButton(string buttonText)
     {
         GameObject buttonObject = Instantiate(buttonPrefab, contentTransform);
         buttonObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(50f, 50f);

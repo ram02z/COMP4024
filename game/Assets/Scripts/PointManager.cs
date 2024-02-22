@@ -1,15 +1,15 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class ScoreChangedEvent : UnityEvent<int> { }
 
 // This class is responsible for managing the player's score and the game timer.
 public class PointManager : MonoBehaviour
 {
     public int score; // The player's current score.
-    public TMP_Text scoreText; // The text object that displays the player's score.
-    public TMP_Text timeText; // The text object that displays the remaining time.
     private WordManager _wordManager; // Reference to the WordManager component.
-    private float _timeRemaining = 120f; // The remaining time in seconds.
+    public ScoreChangedEvent onScoreChanged = new(); // Event that is invoked when the score changes.
 
     // This method is called at the start of the game.
     void Start()
@@ -17,28 +17,7 @@ public class PointManager : MonoBehaviour
         score = 0;
         _wordManager = GameObject.Find("WordManager").GetComponent<WordManager>();
         Projectile.OnEnemyHit.AddListener(UpdateScore);
-        UpdateScoreUI();
-        UpdateTimeUI();
-        StartCoroutine(StartTimer());
-    }
-
-    // This coroutine starts the game timer.
-    IEnumerator StartTimer()
-    {
-        while (_timeRemaining > 0)
-        {
-            yield return new WaitForSeconds(1);
-            _timeRemaining--;
-            UpdateTimeUI();
-        }
-
-        EndGame();
-    }
-
-    // This method ends the game.
-    private void EndGame()
-    {
-        Application.Quit();
+        onScoreChanged.Invoke(score);
     }
 
     // This method updates the player's score.
@@ -56,20 +35,6 @@ public class PointManager : MonoBehaviour
             if (score == 0) return;
             score -= 5;
         }
-        UpdateScoreUI();
-    }
-
-    // This method updates the score text UI.
-    void UpdateScoreUI()
-    {
-        scoreText.text = "SCORE: " + score;
-    }
-
-    // This method updates the time text UI.
-    void UpdateTimeUI()
-    {
-        int minutes = Mathf.FloorToInt(_timeRemaining / 60);
-        int seconds = Mathf.FloorToInt(_timeRemaining % 60);
-        timeText.text = "TIME: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+        onScoreChanged.Invoke(score);
     }
 }

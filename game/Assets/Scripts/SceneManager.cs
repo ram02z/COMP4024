@@ -9,4 +9,10 @@ public class SceneManager : MonoBehaviour
         // Change scene to the game scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
+
+    public void LoadLearnScene()
+    {
+        // Change scene to the game scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LearnScene");
+    }
 }

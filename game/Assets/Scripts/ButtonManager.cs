@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,12 +7,15 @@ using UnityEngine.UI;
 The TopicManager class is used to populate the scroll view with
 topic buttons, which correspond to the vocabulary CSV files.
  */
-public class TopicManager : MonoBehaviour
+public class ButtonManager : MonoBehaviour
 {
     // Reference to the button prefab used for Button instatiation
     public GameObject buttonPrefab;
     // The content parameter of the scroll view on which to instatiate buttons
     public Transform contentTransform;
+    public Button learnButton;
+
+    private int activeTopicButtons = 0;
 
     /*
     This method obtains a list of CSV filenames from the FileUtil. For each
@@ -20,8 +24,8 @@ public class TopicManager : MonoBehaviour
      */
     public void Start()
     {
+        learnButton.gameObject.SetActive(false);
         List<string> csvFiles = FileUtil.GetFileNames("Assets/CSV");
-        
         foreach(string topic in csvFiles)
         {
             CreateButton(topic);
@@ -39,5 +43,34 @@ public class TopicManager : MonoBehaviour
         UnityEngine.UI.Button buttonComponent = buttonObject.GetComponent<UnityEngine.UI.Button>();
         buttonComponent.GetComponentInChildren<Text>().text = buttonText;
         buttonObject.name = buttonText;
+    }
+
+    public void LogButtonActivation()
+    {
+        activeTopicButtons++;
+        ChangeLearnButtonActiveStatus();
+    }
+
+    public void LogButtonDeactivation()
+    {
+        activeTopicButtons--;
+        ChangeLearnButtonActiveStatus();
+    }
+
+    private void ChangeLearnButtonActiveStatus()
+    {
+        if (AreButtonsActive())
+        {
+            learnButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            learnButton.gameObject.SetActive(false);
+        }
+    }
+
+    public Boolean AreButtonsActive()
+    {
+        return activeTopicButtons > 0;
     }
 }

@@ -45,18 +45,27 @@ public class ButtonManager : MonoBehaviour
         buttonObject.name = buttonText;
     }
 
+    /*
+     * Increments the activeTopicButtons counter
+     */
     public void LogButtonActivation()
     {
         activeTopicButtons++;
         ChangeLearnButtonActiveStatus();
     }
 
+    /*
+     * Decrements the activeTopicButtons counter
+     */
     public void LogButtonDeactivation()
     {
         activeTopicButtons--;
         ChangeLearnButtonActiveStatus();
     }
 
+    /*
+     *Activates or deactivates the learn button based on the output of AreButtonsActive()
+     */
     private void ChangeLearnButtonActiveStatus()
     {
         if (AreButtonsActive())
@@ -69,6 +78,9 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
+    /*
+     * Returns true if there is at least 1 topic button selected
+     */
     public Boolean AreButtonsActive()
     {
         return activeTopicButtons > 0;

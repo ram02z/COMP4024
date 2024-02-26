@@ -13,7 +13,6 @@ public class DebugObject : MonoBehaviour
         if (vocabulary != null)
         {
             Debug.Log("Vocabulary exists");
-            vocabulary.PrintToDebug();
         }
         else
         {

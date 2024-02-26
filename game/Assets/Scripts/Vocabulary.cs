@@ -12,7 +12,8 @@ is a singleton class so that it can persist between scenes
  */
 public class Vocabulary : MonoBehaviour
 {
-    public Dictionary<string, Dictionary<string, string>> vocabMap;
+    private Dictionary<string, string> vocabMap;
+    private Dictionary<string, string> topicMap;
     private static Vocabulary instance;
 
     /*
@@ -22,7 +23,7 @@ public class Vocabulary : MonoBehaviour
      */
     public void SetupVocabMap()
     {
-        vocabMap = new Dictionary<string, Dictionary<string, string>>();
+        vocabMap = new Dictionary<string, string>();
     }
 
     /*
@@ -31,16 +32,19 @@ public class Vocabulary : MonoBehaviour
     */
     private void Awake()
     {
-        // Ensure only one instance exists
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // Create the vocabMap
             if (vocabMap == null)
             {
-                SetupVocabMap();
+                vocabMap = new Dictionary<string, string>();
+            }
+
+            if (topicMap == null)
+            {
+                topicMap = new Dictionary<string, string>();
             }
         }
         else
@@ -50,15 +54,16 @@ public class Vocabulary : MonoBehaviour
     }
 
     /*
-     Checks if the provided topic exists in the vocabMap. If it does not
-    then a new entry will be added with the topic string as the key.
-    */
+     * Adds the given topic and its associated vocabulary to the
+     * vocabMap. If the topic already exists then the vocabulary
+     * is updated with the new values.
+     */
     public void AddTopicVocab(string topic, Dictionary<string, string> vocabulary)
     {
-        Debug.Log("AddTopicVocab: " + topic);
-        if (!IsTopicInVocabulary(topic))
+        foreach (var (frenchWord, englishWord) in vocabulary)
         {
-            vocabMap.Add(topic, vocabulary);
+            vocabMap.TryAdd(frenchWord, englishWord);
+            topicMap.TryAdd(frenchWord, topic);
         }
     }
 
@@ -69,32 +74,30 @@ public class Vocabulary : MonoBehaviour
      */
     public void RemoveTopicVocab(string topic)
     {
-        Debug.Log("RemoveTopicVocab: " + topic);
-        if (IsTopicInVocabulary(topic))
+        List<string> wordsToRemove = new List<string>();
+
+        foreach (var entry in topicMap)
         {
-            Debug.Log("removing......");
-            vocabMap.Remove(topic);
+            if (entry.Value == topic)
+            {
+                wordsToRemove.Add(entry.Key);
+            }
+        }
+
+        foreach (var word in wordsToRemove)
+        {
+            vocabMap.Remove(word);
+            topicMap.Remove(word);
         }
     }
 
     /*
-     Returns the vocabMap dictionary: <string, Dictionary<string, string>>
-    where the vocabMap contains <topic name, Dictionary<french word, english word>> 
+     Checks if the given topic string exists as a value in the topicMap.
+    Returns true if the value is present else false
     */
-    public Dictionary<string, Dictionary<string, string>> GetVocabMap()
+    public bool IsTopicInVocabulary(string topic)
     {
-        return vocabMap;
-    }
-
-    /*
-     Checks if the given topic string exists as a key in the vocabMap.
-    Returns true if the key is present else false
-    */
-    public Boolean IsTopicInVocabulary(string topic)
-    {
-        Debug.Log("IsTopicInVocabulary: called");
-        Debug.Log("IsTopicInVocabulary: " + vocabMap.ContainsKey(topic));
-        return vocabMap.ContainsKey(topic);
+        return topicMap.ContainsValue(topic);
     }
 
     /*
@@ -108,6 +111,27 @@ public class Vocabulary : MonoBehaviour
         Dictionary<string, string> csvValues = FileUtil.ReadCSVFile(csvFilepath);
         AddTopicVocab(topic, csvValues);
     }
+    
+    /*
+     * Returns dictionary of all french words and their english translations
+     */
+    public Dictionary<string, string> GetVocabMap()
+    {
+        return vocabMap;
+    }
+    
+    /*
+     Returns the english translation of the given french word
+    */
+    public string GetEnglishTranslation(string frenchWord)
+    {
+        if (vocabMap.TryGetValue(frenchWord, out var englishWord))
+        {
+            return englishWord;
+        }
+        Debug.LogError("Word not found in Vocabulary");
+        return null;
+    }
 
     /*
      This method is called by topic Buttons. If the topic already
@@ -116,50 +140,19 @@ public class Vocabulary : MonoBehaviour
     is added then true is returned.
 
     */
-    public Boolean TopicButtonClicked(string topic)
+    public bool TopicButtonClicked(string topic)
     {
         if (!IsTopicInVocabulary(topic))
         {
             AddTopicToVocabMap(topic);
-            PrintToDebug();
             return true;
         }
         else
         {
             RemoveTopicVocab(topic);
-            PrintToDebug();
             return false;
         }
 
-    }
-
-    /*
-     Prints the contents of the vocab dictionary to the debug log
-     */
-    public void PrintToDebug()
-    {
-        if (vocabMap != null)
-        {
-            foreach (var topicEntry in vocabMap)
-            {
-                string topic = topicEntry.Key;
-                Dictionary<string, string> topicVocab = topicEntry.Value;
-
-                Debug.Log($"Topic: {topic}");
-
-                foreach (var vocabEntry in topicVocab)
-                {
-                    string key = vocabEntry.Key;
-                    string value = vocabEntry.Value;
-
-                    Debug.Log($"  {key}: {value}");
-                }
-            }
-        }
-        else
-        {
-            Debug.LogWarning("vocabMap is null");
-        }
     }
 
 }

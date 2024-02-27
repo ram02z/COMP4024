@@ -14,6 +14,8 @@ public class RevisionTextController : MonoBehaviour
 {
     public TextMeshProUGUI englishText;
     public TextMeshProUGUI frenchText;
+    public TextMeshProUGUI currentTopicText;
+    private string currentTopic;
     private int vocabularyTopicIndex = 0;
     private int vocabularyWordIndex = -1;
     private Dictionary<string, Dictionary<string, string>> vocabularyDict;
@@ -41,6 +43,7 @@ public class RevisionTextController : MonoBehaviour
     {
         englishText.text = english;
         frenchText.text = french;
+        currentTopicText.text = "Current Topic: " + currentTopic;
     }
 
     /*
@@ -49,7 +52,7 @@ public class RevisionTextController : MonoBehaviour
      */
     private void UpdateCurrentTopic()
     {
-        string currentTopic = topics[vocabularyTopicIndex];
+        currentTopic = topics[vocabularyTopicIndex];
         topicTranslationDict = vocabularyDict[currentTopic];
         currentTopicTranslations = new List<string>(topicTranslationDict.Keys);
     }

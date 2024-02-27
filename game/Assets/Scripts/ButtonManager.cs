@@ -14,7 +14,8 @@ public class ButtonManager : MonoBehaviour
     // The content parameter of the scroll view on which to instatiate buttons
     public Transform contentTransform;
     public Button learnButton;
-
+    public Button startGameButton; // Reference to the start game button
+    private Vocabulary _vocabulary; // Reference to the Vocabulary object
     private int activeTopicButtons = 0;
 
     /*
@@ -24,6 +25,13 @@ public class ButtonManager : MonoBehaviour
      */
     public void Start()
     {
+        // Find the Vocabulary object in the scene
+        _vocabulary = UnityEngine.Object.FindObjectOfType<Vocabulary>();
+        // Add a listener to the start game button
+        startGameButton.onClick.AddListener(StartGame);
+        // Add a listener to the learn button
+        learnButton.onClick.AddListener(Learn);
+
         learnButton.gameObject.SetActive(false);
         List<string> csvFiles = FileUtil.GetFileNames("Assets/CSV");
         foreach(string topic in csvFiles)
@@ -85,4 +93,23 @@ public class ButtonManager : MonoBehaviour
     {
         return activeTopicButtons > 0;
     }
+
+    // Callback for the start game button
+    private void StartGame()
+    {
+        if (_vocabulary.vocabMap.Count == 0)
+        {
+            Debug.LogError("Vocabulary map is empty. Cannot start game.");
+            return;
+        }
+        // Load the game scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+    }
+
+    // Callback for the learn button
+    private void Learn()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LearnScene");
+    }
+
 }

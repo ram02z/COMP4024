@@ -1,5 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using NUnit.Framework;
+using Tests.Mock;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -13,11 +14,21 @@ namespace Tests.PlayMode
     public class GameSuite : InputTestFixture
     {
         private Keyboard keyboard;
+        private Vocabulary _vocabulary;
 
         [SetUp]
         public override void Setup()
         {
             SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+            // Create a new GameObject and add the MockVocabulary component
+            GameObject mockObject = new GameObject();
+            mockObject.AddComponent<MockVocabulary>();
+
+            // Replace the Vocabulary component in the WordManager with the MockVocabulary
+            WordManager wordManager = mockObject.AddComponent<WordManager>();
+            wordManager.vocabulary = mockObject.GetComponent<MockVocabulary>();
+            _vocabulary = wordManager.vocabulary;
+
             base.Setup();
 
             keyboard = InputSystem.AddDevice<Keyboard>();
@@ -190,7 +201,7 @@ namespace Tests.PlayMode
                 var obj = GameObject.FindWithTag("Enemy");
                 if (obj == null) return false;
                 var enemyTextTag = obj.GetComponentInChildren<TMP_Text>().text;
-                return enemyTextTag == wordText;
+                return _vocabulary.GetVocabularyOnly()[enemyTextTag] == wordText;
 
             });
 
@@ -236,7 +247,7 @@ namespace Tests.PlayMode
             yield return null;
         }
         
-                [UnityTest]
+        [UnityTest]
         public IEnumerator ScoreDoesNotChangeWhenEnemyWithNonMatchingTextTagIsDestroyed()
         {
             // Get the 'Word' GameObject.
@@ -253,7 +264,7 @@ namespace Tests.PlayMode
                 var obj = GameObject.FindWithTag("Enemy");
                 if (obj == null) return false;
                 var enemyTextTag = obj.GetComponentInChildren<TMP_Text>().text;
-                return enemyTextTag != wordText;
+                return _vocabulary.GetVocabularyOnly()[enemyTextTag] != wordText;
 
             });
 

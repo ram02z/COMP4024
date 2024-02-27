@@ -55,7 +55,7 @@ namespace Tests.EditMode
             Dictionary<string, string> elementBeforeAddTopicVocab = vocabularyObject.GetVocabMap()["topic1"];
             vocabularyObject.AddTopicVocab("topic1", testVocabulary);
             Dictionary<string, string> elementAfterAddTopicVocab = vocabularyObject.GetVocabMap()["topic1"];
-
+        
             Assert.AreEqual(elementBeforeAddTopicVocab, elementAfterAddTopicVocab);
         }
 
@@ -79,8 +79,8 @@ namespace Tests.EditMode
         public void GetVocabMap_WhenNotNull_ReturnsDictionary()
         {
             vocabularyObject.SetupVocabMap();
-            Dictionary<string, Dictionary<string, string>> dictionaryAfterSetupVocabMap = vocabularyObject.GetVocabMap();
-            Assert.AreEqual(dictionaryAfterSetupVocabMap, new Dictionary<string, Dictionary<string, string>>());
+            var dictionaryAfterSetupVocabMap = vocabularyObject.GetVocabMap();
+            Assert.AreEqual(dictionaryAfterSetupVocabMap, new Dictionary<string, string>());
         }
 
 

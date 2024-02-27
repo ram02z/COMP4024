@@ -7,6 +7,7 @@ public class HomeScreenButtonManager : MonoBehaviour
     public Button learnButton; // Reference to the learn button
     private Vocabulary _vocabulary; // Reference to the Vocabulary object
     
+    // Start is called before the first frame update
     void Start()
     {
         // Find the Vocabulary object in the scene
@@ -17,6 +18,7 @@ public class HomeScreenButtonManager : MonoBehaviour
         learnButton.onClick.AddListener(Learn);
     }
     
+    // Callback for the start game button
     private void StartGame()
     {
         if (_vocabulary.vocabMap.Count == 0)
@@ -28,6 +30,7 @@ public class HomeScreenButtonManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
     
+    // Callback for the learn button
     private void Learn()
     {
         throw new System.NotImplementedException();

@@ -17,7 +17,7 @@ namespace Tests.PlayMode
         [SetUp]
         public override void Setup()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
             base.Setup();
 
             keyboard = InputSystem.AddDevice<Keyboard>();

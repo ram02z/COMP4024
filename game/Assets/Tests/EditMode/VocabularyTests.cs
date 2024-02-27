@@ -49,15 +49,15 @@ namespace Tests.EditMode
             Assert.IsTrue(vocabularyObject.IsTopicInVocabulary(testTopicName));
         }
 
-        // [Test]
-        // public void AddTopicVocab_WhenTopicInVocabulary_DoesNothing()
-        // {
-        //     Dictionary<string, string> elementBeforeAddTopicVocab = vocabularyObject.GetVocabMap()["topic1"];
-        //     vocabularyObject.AddTopicVocab("topic1", testVocabulary);
-        //     Dictionary<string, string> elementAfterAddTopicVocab = vocabularyObject.GetVocabMap()["topic1"];
-        //
-        //     Assert.AreEqual(elementBeforeAddTopicVocab, elementAfterAddTopicVocab);
-        // }
+        [Test]
+        public void AddTopicVocab_WhenTopicInVocabulary_DoesNothing()
+        {
+            Dictionary<string, string> elementBeforeAddTopicVocab = vocabularyObject.GetVocabMap()["topic1"];
+            vocabularyObject.AddTopicVocab("topic1", testVocabulary);
+            Dictionary<string, string> elementAfterAddTopicVocab = vocabularyObject.GetVocabMap()["topic1"];
+        
+            Assert.AreEqual(elementBeforeAddTopicVocab, elementAfterAddTopicVocab);
+        }
 
         [Test]
         public void RemoveTopicVocab_WhenTopicInVocabulary_RemovesEntry()
@@ -66,14 +66,14 @@ namespace Tests.EditMode
             Assert.False(vocabularyObject.IsTopicInVocabulary("topic1"));
         }
 
-        // [Test]
-        // public void RemoveTopicVocab_WhenTopicNotInVocabulary_DoesNothing()
-        // {
-        //     Dictionary<string, Dictionary<string, string>> dictionaryBeforeRemoveTopicVocab = vocabularyObject.GetVocabMap();
-        //     vocabularyObject.RemoveTopicVocab("non existent topic");
-        //     Dictionary<string, Dictionary<string, string>> dictionaryAfterRemoveTopicVocab = vocabularyObject.GetVocabMap();
-        //     Assert.AreEqual(dictionaryBeforeRemoveTopicVocab, dictionaryAfterRemoveTopicVocab);
-        // }
+        [Test]
+        public void RemoveTopicVocab_WhenTopicNotInVocabulary_DoesNothing()
+        {
+            Dictionary<string, Dictionary<string, string>> dictionaryBeforeRemoveTopicVocab = vocabularyObject.GetVocabMap();
+            vocabularyObject.RemoveTopicVocab("non existent topic");
+            Dictionary<string, Dictionary<string, string>> dictionaryAfterRemoveTopicVocab = vocabularyObject.GetVocabMap();
+            Assert.AreEqual(dictionaryBeforeRemoveTopicVocab, dictionaryAfterRemoveTopicVocab);
+        }
 
         [Test]
         public void GetVocabMap_WhenNotNull_ReturnsDictionary()

@@ -8,10 +8,11 @@ public class WordChangedEvent: UnityEvent<string> {}
 // This class is responsible for managing the words that are displayed in the game.
 public class WordManager : MonoBehaviour
 {
-    private Vocabulary vocabulary; // Reference to the Vocabulary component.
+    public Vocabulary vocabulary; // Reference to the Vocabulary component.
     private List<string> words = new(); // The list of words.
     private Queue<string> wordQueue = new(); // The queue of words.
     public WordChangedEvent onWordChanged = new(); // Event that is invoked when the word changes.
+    private Dictionary<string, string> wordTranslations; // The dictionary of word translations.
 
     // This method is called at the start of the game.
     // It enqueues all the words into the wordQueue and updates the wordText.
@@ -20,7 +21,8 @@ public class WordManager : MonoBehaviour
         vocabulary = FindObjectOfType<Vocabulary>();
         if (vocabulary != null)
         {
-            words = new List<string>(vocabulary.GetVocabMap().Keys);
+            wordTranslations = vocabulary.GetVocabularyOnly();
+            words = new List<string>(wordTranslations.Keys);
             foreach (var word in words)
             {
                 wordQueue.Enqueue(word);
@@ -42,7 +44,7 @@ public class WordManager : MonoBehaviour
     // This method returns the current word from the wordQueue in English.
     private string GetCurrentEnglishWord()
     {
-        return vocabulary.GetEnglishTranslation(GetCurrentFrenchWord());
+        return wordTranslations[GetCurrentFrenchWord()];
     }
 
     // This method changes the current word in the wordQueue and updates the wordText.

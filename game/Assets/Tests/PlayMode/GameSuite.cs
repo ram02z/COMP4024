@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using NUnit.Framework;
 using Tests.Mock;
 using TMPro;
@@ -19,7 +19,7 @@ namespace Tests.PlayMode
         [SetUp]
         public override void Setup()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
             // Create a new GameObject and add the MockVocabulary component
             GameObject mockObject = new GameObject();
             mockObject.AddComponent<MockVocabulary>();
@@ -28,6 +28,7 @@ namespace Tests.PlayMode
             WordManager wordManager = mockObject.AddComponent<WordManager>();
             wordManager.vocabulary = mockObject.GetComponent<MockVocabulary>();
             _vocabulary = wordManager.vocabulary;
+
             base.Setup();
 
             keyboard = InputSystem.AddDevice<Keyboard>();

@@ -87,7 +87,7 @@ public class MeteorSpawner : MonoBehaviour
 
         // Decide whether meteor text should be correct translation or not - based on wordType flag
         if (wordType)
-            meteorText.text = wordManager.GetCurrentWord();
+            meteorText.text = wordManager.GetCurrentFrenchWord();
         else
             meteorText.text = wordManager.GetRandomWord();
 

@@ -205,8 +205,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 775513528}
   m_HandleRect: {fileID: 775513527}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.97461057
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -783,6 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1465704811}
   - component: {fileID: 1465704813}
+  - component: {fileID: 1465704814}
   m_Layer: 0
   m_Name: ButtonManager
   m_TagString: Untagged
@@ -819,6 +820,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 2218673561225234586, guid: ed4c97738b503174d9fad2c1be6d847c, type: 3}
   contentTransform: {fileID: 1894965124}
+  learnButton: {fileID: 2031290600}
+--- !u!114 &1465704814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465704810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d72df5f1624985b2b2c07bc6b80c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGameButton: {fileID: 2710393152968984358}
   learnButton: {fileID: 2031290600}
 --- !u!1 &1535914654
 GameObject:
@@ -934,7 +949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -329, y: 177.5}
+  m_AnchoredPosition: {x: -329, y: 177.49904}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1894965125
@@ -1059,9 +1074,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2031290603}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneManager, Scripts
-        m_MethodName: LoadLearnScene
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1140,10 +1155,10 @@ PrefabInstance:
     - target: {fileID: 1301776278633152255, guid: fa09ccb292793b343b38ba8651210977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2710393152968984356}
+      objectReference: {fileID: 0}
     - target: {fileID: 1301776278633152255, guid: fa09ccb292793b343b38ba8651210977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGameScene
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1301776278633152255, guid: fa09ccb292793b343b38ba8651210977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1296,6 +1311,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7065f72b64250f44b494dad97cdaddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2710393152968984358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1301776278633152255, guid: fa09ccb292793b343b38ba8651210977, type: 3}
+  m_PrefabInstance: {fileID: 2710393152968984351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910929355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

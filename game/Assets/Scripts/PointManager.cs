@@ -24,7 +24,7 @@ public class PointManager : MonoBehaviour
     private void UpdateScore(GameObject enemy)
     {
         TextMeshPro enemyText = enemy.GetComponentInChildren<TextMeshPro>();
-        if (enemyText.text.Equals(_wordManager.GetCurrentWord()))
+        if (enemyText.text.Equals(_wordManager.GetCurrentFrenchWord()))
         {
             _wordManager.ChangeWord();
             score += 10;

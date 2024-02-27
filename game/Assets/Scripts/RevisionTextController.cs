@@ -83,7 +83,7 @@ public class RevisionTextController : MonoBehaviour
         string currentFrenchWord = currentTopicTranslations[vocabularyWordIndex];
         string currentEnglishWord = topicTranslationDict[currentFrenchWord];
 
-        return new List<string> { currentFrenchWord, currentEnglishWord };
+        return new List<string> { currentEnglishWord, currentFrenchWord };
     }
 
     /*
@@ -113,7 +113,7 @@ public class RevisionTextController : MonoBehaviour
         string currentFrenchWord = currentTopicTranslations[vocabularyWordIndex];
         string currentEnglishWord = topicTranslationDict[currentFrenchWord];
 
-        return new List<string> { currentFrenchWord, currentEnglishWord };
+        return new List<string> { currentEnglishWord, currentFrenchWord };
     }
 
     /*

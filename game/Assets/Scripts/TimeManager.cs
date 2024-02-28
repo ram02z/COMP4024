@@ -1,4 +1,5 @@
-﻿using UnityEngine.Events;
+﻿using System;
+using UnityEngine.Events;
 using System.Collections;
 using UnityEngine;
 
@@ -31,6 +32,18 @@ public class TimeManager : MonoBehaviour
     // This method ends the game and goes to the Topic Scene.
     private void EndGame()
     {
+        // Get the current highscore
+        int highscore = GameObject.Find("PointManager").GetComponent<PointManager>().score;
+
+        // Get the current date and time
+        string dateTime = DateTime.Now.ToString();
+
+        // Define the path where the highscore will be saved
+        string path = Application.persistentDataPath + "/highscore.txt";
+
+        // Save the highscore and the current date and time to the file
+        string dataToSave = highscore + ", " + dateTime + Environment.NewLine;
+        System.IO.File.AppendAllText(path, dataToSave);
         // TODO: Go to game over scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("TopicScene");
     }

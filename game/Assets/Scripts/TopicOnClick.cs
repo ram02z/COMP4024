@@ -10,7 +10,7 @@ public class TopicOnClick : MonoBehaviour
 
     private Color selectedColour = Color.red;
     private Color unselectedColour;
-    private ButtonManager buttonManager; 
+    private TopicManager _topicManager; 
 
 
     /*
@@ -18,8 +18,8 @@ public class TopicOnClick : MonoBehaviour
      */
     private void Start()
     {
-        GameObject buttonManagerObj = GameObject.Find("ButtonManager");
-        buttonManager = buttonManagerObj.GetComponent<ButtonManager>();
+        GameObject topicManagerObj = GameObject.Find("TopicManager");
+        _topicManager = topicManagerObj.GetComponent<TopicManager>();
         unselectedColour = GetComponent<UnityEngine.UI.Image>().color;
     }
 
@@ -32,12 +32,12 @@ public class TopicOnClick : MonoBehaviour
         if(selected)
         {
             GetComponent<UnityEngine.UI.Image>().color = selectedColour;
-            buttonManager.LogButtonActivation();
+            _topicManager.LogButtonActivation();
         }
         else
         {
             GetComponent<UnityEngine.UI.Image>().color = unselectedColour;
-            buttonManager.LogButtonDeactivation();
+            _topicManager.LogButtonDeactivation();
         }
     }
 

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 The TopicManager class is used to populate the scroll view with
 topic buttons, which correspond to the vocabulary CSV files.
  */
-public class ButtonManager : MonoBehaviour
+public class TopicManager : MonoBehaviour
 {
     // Reference to the button prefab used for Button instatiation
     public GameObject buttonPrefab;
@@ -16,7 +16,7 @@ public class ButtonManager : MonoBehaviour
     public Button learnButton;
     public Button startGameButton;
     public Button scoreboardButton;
-    private int _activeTopicButtons = 0;
+    private int _activeTopicButtons;
 
     /*
     This method obtains a list of CSV filenames from the FileUtil. For each
@@ -25,6 +25,13 @@ public class ButtonManager : MonoBehaviour
      */
     public void Start()
     {
+        // Clear the vocabulary map
+        Vocabulary vocabulary = FindObjectOfType<Vocabulary>();
+        vocabulary.vocabMap.Clear();
+
+        // Set the active topic buttons to 0
+        _activeTopicButtons = 0;
+        
         // Add a listener to the start game button
         startGameButton.onClick.AddListener(StartGame);
         // Add a listener to the learn button

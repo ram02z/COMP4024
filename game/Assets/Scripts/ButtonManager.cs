@@ -14,9 +14,8 @@ public class ButtonManager : MonoBehaviour
     // The content parameter of the scroll view on which to instatiate buttons
     public Transform contentTransform;
     public Button learnButton;
-    public Button startGameButton; // Reference to the start game button
-    private Vocabulary _vocabulary; // Reference to the Vocabulary object
-    private int activeTopicButtons = 0;
+    public Button startGameButton;
+    private int _activeTopicButtons = 0;
 
     /*
     This method obtains a list of CSV filenames from the FileUtil. For each
@@ -25,14 +24,15 @@ public class ButtonManager : MonoBehaviour
      */
     public void Start()
     {
-        // Find the Vocabulary object in the scene
-        _vocabulary = UnityEngine.Object.FindObjectOfType<Vocabulary>();
         // Add a listener to the start game button
         startGameButton.onClick.AddListener(StartGame);
         // Add a listener to the learn button
         learnButton.onClick.AddListener(Learn);
-
-        learnButton.gameObject.SetActive(false);
+        
+        // Disable the learn and start game buttons
+        learnButton.interactable = false;
+        startGameButton.interactable = false;
+        
         List<string> csvFiles = FileUtil.GetFileNames("Assets/CSV");
         foreach(string topic in csvFiles)
         {
@@ -58,8 +58,8 @@ public class ButtonManager : MonoBehaviour
      */
     public void LogButtonActivation()
     {
-        activeTopicButtons++;
-        ChangeLearnButtonActiveStatus();
+        _activeTopicButtons++;
+        ChangeButtonsActiveStatus();
     }
 
     /*
@@ -67,41 +67,30 @@ public class ButtonManager : MonoBehaviour
      */
     public void LogButtonDeactivation()
     {
-        activeTopicButtons--;
-        ChangeLearnButtonActiveStatus();
+        _activeTopicButtons--;
+        ChangeButtonsActiveStatus();
     }
 
     /*
      *Activates or deactivates the learn button based on the output of AreButtonsActive()
      */
-    private void ChangeLearnButtonActiveStatus()
+    private void ChangeButtonsActiveStatus()
     {
-        if (AreButtonsActive())
-        {
-            learnButton.gameObject.SetActive(true);
-        }
-        else
-        {
-            learnButton.gameObject.SetActive(false);
-        }
+        learnButton.interactable = AreTopicButtonsActive();
+        startGameButton.interactable = AreTopicButtonsActive();
     }
 
     /*
      * Returns true if there is at least 1 topic button selected
      */
-    public Boolean AreButtonsActive()
+    public bool AreTopicButtonsActive()
     {
-        return activeTopicButtons > 0;
+        return _activeTopicButtons > 0;
     }
 
     // Callback for the start game button
     private void StartGame()
     {
-        if (_vocabulary.vocabMap.Count == 0)
-        {
-            Debug.LogError("Vocabulary map is empty. Cannot start game.");
-            return;
-        }
         // Load the game scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }

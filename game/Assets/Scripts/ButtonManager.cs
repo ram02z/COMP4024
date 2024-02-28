@@ -107,7 +107,7 @@ public class ButtonManager : MonoBehaviour
     // Callback for the scoreboard button
     private void ScoreBoard()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("ScoreboardScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ScoreBoardScene");
     }
 
 }

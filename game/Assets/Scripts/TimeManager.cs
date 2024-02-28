@@ -9,7 +9,8 @@ public class TimeManager : MonoBehaviour
 {
     public float timeRemaining = 120f; // The remaining time in seconds.
     public TimeChangedEvent onTimeChanged = new(); // Event that is invoked when the time is changed.
-
+    public GameEndEvent onGameEnd = new();
+    
     // This method is called at the start of the game.
     void Start()
     {
@@ -32,13 +33,7 @@ public class TimeManager : MonoBehaviour
     // This method ends the game and goes to the Topic Scene.
     private void EndGame()
     {
-        // Get the current score
-        int score = GameObject.Find("PointManager").GetComponent<PointManager>().score;
-        if (score > 0)
-        {
-            // Save the highscore
-            FileUtil.WriteHighScoreToFile(score);
-        }
+        onGameEnd.Invoke();
         // TODO: Go to game over scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("TopicScene");
     }

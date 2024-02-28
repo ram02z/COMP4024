@@ -35,15 +35,9 @@ public class TimeManager : MonoBehaviour
         // Get the current highscore
         int highscore = GameObject.Find("PointManager").GetComponent<PointManager>().score;
 
-        // Get the current date and time
-        string dateTime = DateTime.Now.ToString();
-
-        // Define the path where the highscore will be saved
-        string path = Application.persistentDataPath + "/highscore.txt";
-
-        // Save the highscore and the current date and time to the file
-        string dataToSave = highscore + ", " + dateTime + Environment.NewLine;
-        System.IO.File.AppendAllText(path, dataToSave);
+        // Save the highscore
+        FileUtil.WriteHighScoreToFile(highscore);
+        
         // TODO: Go to game over scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("TopicScene");
     }

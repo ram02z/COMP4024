@@ -80,7 +80,7 @@ public class FileUtil : MonoBehaviour
     public static void WriteHighScoreToFile(int highscore)
     {
         // Get the current date and time
-        string dateTime = DateTime.Now.ToString(CultureInfo.CurrentCulture);
+        string dateTime = DateTime.Now.ToString();
 
         // Define the path where the highscore will be saved
         string path = Application.persistentDataPath + "/highscore.txt";
@@ -101,7 +101,14 @@ public class FileUtil : MonoBehaviour
     {
         // Define the path where the highscore is saved
         string path = Application.persistentDataPath + "/highscore.txt";
-
+        
+        // Check if the file exists
+        if (!File.Exists(path))
+        {
+            Debug.Log("Highscore file does not exist.");
+            return new List<(int, string)>();
+        }
+        
         // Read all lines from the file
         string[] lines = File.ReadAllLines(path);
 

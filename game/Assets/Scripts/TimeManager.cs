@@ -32,12 +32,13 @@ public class TimeManager : MonoBehaviour
     // This method ends the game and goes to the Topic Scene.
     private void EndGame()
     {
-        // Get the current highscore
-        int highscore = GameObject.Find("PointManager").GetComponent<PointManager>().score;
-
-        // Save the highscore
-        FileUtil.WriteHighScoreToFile(highscore);
-        
+        // Get the current score
+        int score = GameObject.Find("PointManager").GetComponent<PointManager>().score;
+        if (score > 0)
+        {
+            // Save the highscore
+            FileUtil.WriteHighScoreToFile(score);
+        }
         // TODO: Go to game over scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("TopicScene");
     }

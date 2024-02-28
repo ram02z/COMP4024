@@ -44,8 +44,8 @@ namespace Tests.PlayMode
             var topicButtons = content.GetComponentsInChildren<Button>();
             Assert.IsNotEmpty(topicButtons, "No 'Button' components found in the children of the 'Content' GameObject");
 
-            // Select first topic button.
-            var topicButton = topicButtons[0];
+            // Select second topic button.
+            var topicButton = topicButtons[1];
 
             // Move the mouse to the position of the 'Topic' button and simulate a click.
             topicButton.onClick.Invoke();
@@ -55,7 +55,7 @@ namespace Tests.PlayMode
             // Get the 'Start Game' button.
             var startGameButton = GameObject.Find("Start Game").GetComponent<Button>();
             Assert.IsNotNull(startGameButton, "'Start Game' button not found");
-
+            
             // Assert that the 'Start Game' button is interactable.
             Assert.IsTrue(startGameButton.interactable, "'Start Game' button should be interactable");
             
@@ -93,7 +93,7 @@ namespace Tests.PlayMode
             // Get the 'Learn' button.
             var learnButton = GameObject.Find("Learn").GetComponent<Button>();
             Assert.IsNotNull(learnButton, "'Learn' button not found");
-
+            
             // Assert that the 'Learn' button is interactable.
             Assert.IsTrue(learnButton.interactable, "'Learn' button should be interactable");
             

@@ -6,6 +6,8 @@ using TMPro;
 public class HighScoreDisplay : MonoBehaviour
 {
     public TextMeshProUGUI highScoreText;
+    public GameObject scoreboardRowPrefab;
+    public GameObject content;
 
     void Start()
     {
@@ -16,14 +18,14 @@ public class HighScoreDisplay : MonoBehaviour
     {
         var highScores = FileUtil.ReadHighScoresFromFile();
 
-        string highScoreString = "";
         int counter = 1;
         foreach (var highScore in highScores)
         {
-            highScoreString += $"{counter}. Score: {highScore.Item1}, Date: {highScore.Item2}\n";
+            var row = Instantiate(scoreboardRowPrefab, content.transform).GetComponent<ScoreboardRow>();
+            row.rank.text = counter.ToString();
+            row.score.text = highScore.Item1.ToString();
+            row.date.text = highScore.Item2;
             counter++;
         }
-
-        highScoreText.text = highScoreString;
     }
 }

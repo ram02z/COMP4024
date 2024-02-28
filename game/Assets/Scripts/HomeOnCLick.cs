@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomeOnCLick : MonoBehaviour
+public class HomeOnClick : MonoBehaviour
 {
     public void TopicScreenCallback()
     {

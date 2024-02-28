@@ -131,6 +131,10 @@ public class RevisionTextController : MonoBehaviour
         {
             UpdateText(currentPair[0], currentPair[1]);
         }
+        else
+        {
+            Debug.Log("No next card");
+        }
     }
 
     /*
@@ -144,6 +148,10 @@ public class RevisionTextController : MonoBehaviour
         if (currentPair != null)
         {
             UpdateText(currentPair[0], currentPair[1]);
+        }
+        else
+        {
+            Debug.Log("No previous card");
         }
     }
 }

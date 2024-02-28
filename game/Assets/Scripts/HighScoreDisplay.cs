@@ -20,7 +20,7 @@ public class HighScoreDisplay : MonoBehaviour
         int counter = 1;
         foreach (var highScore in highScores)
         {
-            highScoreString += string.Format("{0}. Score: {1}, Date: {2}\n", counter, highScore.Item1, highScore.Item2);
+            highScoreString += $"{counter}. Score: {highScore.Item1}, Date: {highScore.Item2}\n";
             counter++;
         }
 

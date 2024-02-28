@@ -85,7 +85,7 @@ public class FileUtil : MonoBehaviour
         // Define the path where the highscore will be saved
         string path = Application.persistentDataPath + "/highscore.txt";
         
-        Debug.Log("Updated highscore to " + highscore + "in" + Application.persistentDataPath + "/highscore.txt");
+        Debug.Log($"Updated highscore to {highscore} in {path}");
 
         // Save the highscore and the current date and time to the file
         string dataToSave = highscore + ", " + dateTime + Environment.NewLine;

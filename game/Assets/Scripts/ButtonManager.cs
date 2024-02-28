@@ -15,6 +15,7 @@ public class ButtonManager : MonoBehaviour
     public Transform contentTransform;
     public Button learnButton;
     public Button startGameButton;
+    public Button scoreboardButton;
     private int _activeTopicButtons = 0;
 
     /*
@@ -28,6 +29,8 @@ public class ButtonManager : MonoBehaviour
         startGameButton.onClick.AddListener(StartGame);
         // Add a listener to the learn button
         learnButton.onClick.AddListener(Learn);
+        // Add a listener to the scoreboard button
+        scoreboardButton.onClick.AddListener(ScoreBoard);
         
         // Disable the learn and start game buttons
         learnButton.interactable = false;
@@ -99,6 +102,12 @@ public class ButtonManager : MonoBehaviour
     private void Learn()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("LearnScene");
+    }
+    
+    // Callback for the scoreboard button
+    private void ScoreBoard()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ScoreboardScene");
     }
 
 }

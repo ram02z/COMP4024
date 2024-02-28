@@ -50,7 +50,7 @@ namespace Tests.PlayMode
             // Move the mouse to the position of the 'Topic' button and simulate a click.
             topicButton.onClick.Invoke();
 
-            yield return new WaitForSeconds(2f);
+            yield return null;
 
             // Get the 'Start Game' button.
             var startGameButton = GameObject.Find("Start Game").GetComponent<Button>();
@@ -63,7 +63,7 @@ namespace Tests.PlayMode
             startGameButton.onClick.Invoke();
 
             // Wait for a short period of time to allow the scene to potentially change.
-            yield return new WaitForSeconds(2f);
+            yield return null;
 
             // Assert that the current scene is the game scene.
             Assert.AreEqual("GameScene", SceneManager.GetActiveScene().name);
@@ -88,7 +88,7 @@ namespace Tests.PlayMode
             // Move the mouse to the position of the 'Topic' button and simulate a click.
             topicButton.onClick.Invoke();
 
-            yield return new WaitForSeconds(2f);
+            yield return null;
 
             // Get the 'Learn' button.
             var learnButton = GameObject.Find("Learn").GetComponent<Button>();
@@ -101,7 +101,7 @@ namespace Tests.PlayMode
             learnButton.onClick.Invoke();
 
             // Wait for a short period of time to allow the scene to potentially change.
-            yield return new WaitForSeconds(2f);
+            yield return null;
 
             // Assert that the current scene is the learn scene.
             Assert.AreEqual("LearnScene", SceneManager.GetActiveScene().name);
@@ -123,6 +123,23 @@ namespace Tests.PlayMode
             Assert.AreEqual("TopicScene", SceneManager.GetActiveScene().name);
 
             yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator ClickScoreboardButtonLoadsScoreboardScene()
+        {
+            // Get the 'Scoreboard' button.
+            var scoreboardButton = GameObject.Find("Scoreboard").GetComponent<Button>();
+            Assert.IsNotNull(scoreboardButton, "'Scoreboard' button not found");
+            
+            // Simulate a click on the 'Scoreboard' button.
+            scoreboardButton.onClick.Invoke();
+            
+            // Wait for a short period of time to allow the scene to potentially change.
+            yield return null;
+            
+            // Assert that the current scene is the scoreboard scene.
+            Assert.AreEqual("ScoreBoardScene", SceneManager.GetActiveScene().name);
         }
     }
 }

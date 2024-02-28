@@ -28,6 +28,13 @@ namespace Tests.EditMode
             {"c","c"},
         };
 
+        private Dictionary<string, string> CSVExtraCommaContent = new Dictionary<string, string>
+        {
+            {"a","a, a, a"},
+            {"b","b, b, b"},
+            {"c","c, c, c"},
+        };
+
         [Test]
         public void ReadCSVFile_WhenFileIsValid_ReturnsDataInDictionary()
         {
@@ -43,10 +50,10 @@ namespace Tests.EditMode
         }
 
         [Test]
-        public void ReadCSVFile_WhenFileHasMoreThanTwoColumns_ReturnsFirstTwoColumnsInDictionary()
+        public void ReadCSVFile_WhenFileHasMoreThanTwoColumns_CombinesDataToSecondColumn()
         {
             Dictionary<string, string> csvContent = FileUtil.ReadCSVFile(invalidCSVFile);
-            Assert.AreEqual(csvContent, validCSVContent);
+            Assert.AreEqual(csvContent, CSVExtraCommaContent);
         }
 
         [Test]

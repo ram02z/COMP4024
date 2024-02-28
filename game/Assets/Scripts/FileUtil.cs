@@ -7,7 +7,7 @@ using System.Linq;
  This is a helper class used to perform IO operations such as
 reading vocabulary CSV files and listing filenames
 */
-public class FileUtil:MonoBehaviour
+public class FileUtil : MonoBehaviour
 {
     /*
      Reads the csv file with the given filepath and converts the contents
@@ -26,13 +26,21 @@ public class FileUtil:MonoBehaviour
                     string line = reader.ReadLine();
                     string[] fields = line.Split(',');
 
-                    if (fields.Length >= 2)
+                    if (fields.Length > 2)
                     {
+                        string english = string.Join(", ", fields, 1, fields.Length - 1).Trim();
                         string french = fields[0].Trim();
-                        string english = fields[1].Trim();
-
+                        Debug.Log("french word is " + french);
+                        Debug.Log("english word is " + english);
                         vocabulary.Add(french, english);
                     }
+                    else if (fields.Length == 2)
+                    {
+                        string english = fields[1].Trim();
+                        string french = fields[0].Trim();
+                        vocabulary.Add(french, english);
+                    }
+
                 }
             }
         }
@@ -47,18 +55,20 @@ public class FileUtil:MonoBehaviour
     /*
      Returns a list of all the filenames in the CSV directory
     */
-    public static List<string> GetFileNames(string directoryPath) {
-            if (Directory.Exists(directoryPath))
-            {
-                List<string> filePaths = Directory.GetFiles(directoryPath).ToList();
-                List<string> fileNames = new List<string>();
-                fileNames = filePaths.Where(filePath => !filePath.EndsWith(".meta")).Select(Path.GetFileName).ToList();
+    public static List<string> GetFileNames(string directoryPath)
+    {
+        if (Directory.Exists(directoryPath))
+        {
+            List<string> filePaths = Directory.GetFiles(directoryPath).ToList();
+            List<string> fileNames = new List<string>();
+            fileNames = filePaths.Where(filePath => !filePath.EndsWith(".meta")).Select(Path.GetFileName).ToList();
 
             return fileNames;
-            }
-            else{
-                Debug.Log("Directory does not exist: " + directoryPath);
-                return null;
-            }
+        }
+        else
+        {
+            Debug.Log("Directory does not exist: " + directoryPath);
+            return null;
+        }
     }
 }

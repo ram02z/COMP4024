@@ -37,8 +37,9 @@ namespace Tests.PlayMode
         [SetUp]
         public void Setup()
         {
+            DestroyAllObjects();
 
-            if(vocabularyObject == null)
+            if (vocabularyObject == null)
             {
                 vocabularyObject = new GameObject("Vocabulary");
                 vocabulary = vocabularyObject.AddComponent<Vocabulary>();
@@ -47,6 +48,16 @@ namespace Tests.PlayMode
             }
 
             SceneManager.LoadScene("LearnScene", LoadSceneMode.Single);
+        }
+
+        private void DestroyAllObjects()
+        {
+            GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+
+            foreach (GameObject obj in allObjects)
+            {
+                Object.DestroyImmediate(obj);
+            }
         }
 
         private List<TextMeshProUGUI> GetTextComponents()

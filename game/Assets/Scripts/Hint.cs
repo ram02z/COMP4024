@@ -45,7 +45,7 @@ public class Hint : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         // Check if the H key is pressed
         if (Input.GetKeyDown(KeyCode.H))

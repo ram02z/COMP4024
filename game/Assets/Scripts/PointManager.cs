@@ -18,6 +18,9 @@ public class PointManager : MonoBehaviour
         _wordManager = GameObject.Find("WordManager").GetComponent<WordManager>();
         Projectile.OnEnemyHit.AddListener(UpdateScore);
         onScoreChanged.Invoke(score);
+        
+        TimeManager timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
+        timeManager.onGameEnd.AddListener(SaveScore);
     }
 
     // This method updates the player's score.
@@ -36,5 +39,15 @@ public class PointManager : MonoBehaviour
             score -= 5;
         }
         onScoreChanged.Invoke(score);
+    }
+    
+    private void SaveScore()
+    {
+        if (score == 0)
+        {
+            Debug.Log("Score is 0, not saving score");
+            return;
+        }
+        FileUtil.WriteHighScoreToFile(score);
     }
 }

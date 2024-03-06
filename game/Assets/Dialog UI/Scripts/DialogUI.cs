@@ -78,5 +78,11 @@ namespace EasyUI.Dialogs
             Debug.Log("Quitting application and returning to home screen...");
             UnityEngine.SceneManagement.SceneManager.LoadScene("TopicScene");
         }
+
+        // Quit application
+        public void QuitApplication()
+        {
+            Application.Quit();
+        }
     }
 }

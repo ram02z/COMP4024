@@ -60,6 +60,8 @@ public class TopicManager : MonoBehaviour
         buttonObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(50f, 50f);
         UnityEngine.UI.Button buttonComponent = buttonObject.GetComponent<UnityEngine.UI.Button>();
         buttonComponent.GetComponentInChildren<Text>().text = buttonText;
+        buttonComponent.GetComponentInChildren<Text>().color = Color.black;
+
         buttonObject.name = buttonText;
     }
 

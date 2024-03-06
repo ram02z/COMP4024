@@ -8,7 +8,7 @@ using UnityEngine;
 public class TopicOnClick : MonoBehaviour
 {
 
-    private Color selectedColour = Color.red;
+    private Color selectedColour = new Color32(96, 219, 129, 255);
     private Color unselectedColour;
     private TopicManager _topicManager; 
 

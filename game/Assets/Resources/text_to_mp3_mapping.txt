@@ -1,0 +1,802 @@
+complet/complète | completcomplA te.mp3
+entrée l' (f) | entrAe l f.mp3
+libre | libre.mp3
+fermer | fermer.mp3
+interdit | interdit.mp3
+occupé | occupA.mp3
+ouvert | ouvert.mp3
+ouvrir | ouvrir.mp3
+sortie la | sortie la.mp3
+combien ? | combien.mp3
+comment ? | comment.mp3
+est-ce que ? | est-ce que.mp3
+où ? | oA1.mp3
+pourquoi ? | pourquoi.mp3
+quand ? | quand.mp3
+que ? | que.mp3
+quel/quelle ? | quelquelle.mp3
+qu’est-ce que ? | quaTMest-ce que.mp3
+qu’est-ce qui ? | quaTMest-ce qui.mp3
+qu’est-ce que c’est ? | quaTMest-ce que caTMest.mp3
+qui ? | qui.mp3
+quoi ? | quoi.mp3
+châtain | chAtain.mp3
+clair | clair.mp3
+foncé | foncA.mp3
+marron | marron.mp3
+noisette | noisette.mp3
+pourpre | pourpre.mp3
+rose | rose.mp3
+roux | roux.mp3
+CDI centre de documentation et d’information le | CDI centre de documentation et daTMinformation le.mp3
+CES collège d’enseignement secondaire le | CES collA ge daTMenseignement secondaire le.mp3
+EPS éducation physique et sportive l’ (f) | EPS Aducation physique et sportive laTM f.mp3
+HLM habitation à loyer modéré l’ (f) | HLM habitation A  loyer modArA laTM f.mp3
+SAMU service d’aide médicale d’urgence le | SAMU service daTMaide mAdicale daTMurgence le.mp3
+SDF sans domicile fixe le | SDF sans domicile fixe le.mp3
+SNCF société nationale des chemins de fer français la | SNCF sociAtA nationale des chemins de fer franAais la.mp3
+TGV train à grande vitesse le | TGV train A  grande vitesse le.mp3
+TVA taxe sur la valeur ajoutée la | TVA taxe sur la valeur ajoutAe la.mp3
+VTT vélo tout terrain le | VTT vAlo tout terrain le.mp3
+à quelle heure ? | A  quelle heure.mp3
+ça s’écrit comment ? | Aa saTMAcrit comment.mp3
+c’est combien ? | caTMest combien.mp3
+c’est quelle date ? | caTMest quelle date.mp3
+c’est quel jour ? | caTMest quel jour.mp3
+de quelle couleur ? | de quelle couleur.mp3
+d’où ? | daTMoA1.mp3
+pour combien de temps ? | pour combien de temps.mp3
+que veut dire... ? | que veut dire.mp3
+quelle heure est-il ? | quelle heure est-il.mp3
+plus/moins | plusmoins.mp3
+plus que/moins que | plus quemoins que.mp3
+bon/meilleur/le meilleur | bonmeilleurle meilleur.mp3
+mauvais/pire/le pire | mauvaispirele pire.mp3
+bien/mieux/le mieux | bienmieuxle mieux.mp3
+mal/plus mal/le plus mal | malplus malle plus mal.mp3
+beaucoup/plus/le plus | beaucoupplusle plus.mp3
+peu/moins/le moins | peumoinsle moins.mp3
+à cause de | A  cause de.mp3
+à part | A  part.mp3
+ainsi | ainsi.mp3
+alors | alors.mp3
+aussi | aussi.mp3
+car | car.mp3
+cependant | cependant.mp3
+c’est-à-dire | caTMest-A -dire.mp3
+comme | comme.mp3
+d’un côté/de l’autre côté | daTMun cA tAde laTMautre cA tA.mp3
+donc | donc.mp3
+ensuite | ensuite.mp3
+évidemment | Avidemment.mp3
+mais | mais.mp3
+même si | mAame si.mp3
+ou | ou.mp3
+par contre | par contre.mp3
+par exemple | par exemple.mp3
+pendant que | pendant que.mp3
+pourtant | pourtant.mp3
+puis | puis.mp3
+puisque | puisque.mp3
+quand | quand.mp3
+sans doute | sans doute.mp3
+si | si.mp3
+y compris | y compris.mp3
+avoir raison | avoir raison.mp3
+avoir tort | avoir tort.mp3
+corriger | corriger.mp3
+erreur l' (f) | erreur l f.mp3
+faute la | faute la.mp3
+faux/fausse | fauxfausse.mp3
+il (me) faut | il me faut.mp3
+juste | juste.mp3
+obligatoire | obligatoire.mp3
+parfait | parfait.mp3
+sûr | sAr.mp3
+se tromper | se tromper.mp3
+vrai | vrai.mp3
+cadeau le | cadeau le.mp3
+église l’ (f) | Aglise laTM f.mp3
+fête la | fAate la.mp3
+fête des mères la | fAate des mA res la.mp3
+fête des rois la | fAate des rois la.mp3
+fête du travail la | fAate du travail la.mp3
+fêter | fAater.mp3
+feux d’artifice les (m) | feux daTMartifice les m.mp3
+Jour de l’An le | Jour de laTMAn le.mp3
+juif/juive | juifjuive.mp3
+mosquée la | mosquAe la.mp3
+musulman | musulman.mp3
+Pâques | PAques.mp3
+poisson d’avril | poisson daTMavril.mp3
+religieux/religieuse | religieuxreligieuse.mp3
+Saint-Sylvestre la | Saint-Sylvestre la.mp3
+Saint Valentin la | Saint Valentin la.mp3
+Toussaint la | Toussaint la.mp3
+veille de Noël la | veille de NoAl la.mp3
+défilé le | dAfilA le.mp3
+jour férié le | jour fAriA le.mp3
+messe la | messe la.mp3
+Pentecôte la | PentecA te la.mp3
+réunion la | rAunion la.mp3
+année sabbatique l' (f) | annAe sabbatique l f.mp3
+apprenti(e) l' (m/f) | apprentie l mf.mp3
+avoir envie de | avoir envie de.mp3
+avoir l’intention (de) | avoir laTMintention de.mp3
+bac(calauréat) le | baccalaurAat le.mp3
+en première | en premiA re.mp3
+en terminale | en terminale.mp3
+étudier | Atudier.mp3
+laisser tomber | laisser tomber.mp3
+liberté la | libertA la.mp3
+lycée le | lycAe le.mp3
+conseiller d’orientation le | conseiller daTMorientation le.mp3
+épreuve l’ (f) | Apreuve laTM f.mp3
+établissement l’ (m) | Atablissement laTM m.mp3
+faculté la | facultA la.mp3
+former | former.mp3
+licence la | licence la.mp3
+actualités les (f) | actualitAs les f.mp3
+agneau l’ (m) | agneau laTM m.mp3
+argent l’ (m) | argent laTM m.mp3
+assiette l’ (f) | assiette laTM f.mp3
+basket le | basket le.mp3
+beurre le | beurre le.mp3
+bière la | biA re la.mp3
+billet le | billet le.mp3
+bœuf le | bAuf le.mp3
+boire | boire.mp3
+boisson la | boisson la.mp3
+canard le | canard le.mp3
+la carte | la carte.mp3
+centre sportif le | centre sportif le.mp3
+cerise la | cerise la.mp3
+champignon le | champignon le.mp3
+chanter | chanter.mp3
+chanteur le/chanteuse la | chanteur lechanteuse la.mp3
+chanson la | chanson la.mp3
+cheval le | cheval le.mp3
+choisir | choisir.mp3
+chou le | chou le.mp3
+chou-fleur le | chou-fleur le.mp3
+citron le | citron le.mp3
+club des jeunes le | club des jeunes le.mp3
+commander | commander.mp3
+commencer | commencer.mp3
+confiture la | confiture la.mp3
+courir | courir.mp3
+coûter | coAter.mp3
+crêpe la | crAape la.mp3
+crudités les (f) | cruditAs les f.mp3
+débuter | dAbuter.mp3
+dessin animé le | dessin animA le.mp3
+dinde la | dinde la.mp3
+eau (minérale) l’ (f) | eau minArale laTM f.mp3
+équitation l’ (f) | Aquitation laTM f.mp3
+escalade l’ (f) | escalade laTM f.mp3
+escargot l’ (m) | escargot laTM m.mp3
+essayer | essayer.mp3
+fana de (le) | fana de le.mp3
+feuilleton le | feuilleton le.mp3
+film de guerre le | film de guerre le.mp3
+film policier le | film policier le.mp3
+fraise la | fraise la.mp3
+framboise la | framboise la.mp3
+fruits de mer les (m) | fruits de mer les m.mp3
+glace la | glace la.mp3
+goûter | goAter.mp3
+haricots verts les (m) | haricots verts les m.mp3
+hors d’œuvre le (m) | hors daTMAuvre le m.mp3
+s’intéresser à | saTMintAresser A.mp3
+jambon le | jambon le.mp3
+jeu télévisé le | jeu tAlAvisA le.mp3
+lait le | lait le.mp3
+légumes les (m) | lAgumes les m.mp3
+natation la | natation la.mp3
+nourriture la | nourriture la.mp3
+œuf l’ (m) | Auf laTM m.mp3
+oignon l’ (m) | oignon laTM m.mp3
+passe-temps le | passe-temps le.mp3
+pâtes les (f) | pAtes les f.mp3
+patinage à glace le | patinage A  glace le.mp3
+patinoire la | patinoire la.mp3
+payer | payer.mp3
+pêche la | pAache la.mp3
+petits pois les (m) | petits pois les m.mp3
+planche à voile la | planche A  voile la.mp3
+plat principal le | plat principal le.mp3
+poire la | poire la.mp3
+poisson le | poisson le.mp3
+poivre le | poivre le.mp3
+pomme la | pomme la.mp3
+pomme de terre la | pomme de terre la.mp3
+potage le | potage le.mp3
+poulet le | poulet le.mp3
+piscine la | piscine la.mp3
+pourboire le | pourboire le.mp3
+prendre | prendre.mp3
+promenade la | promenade la.mp3
+publicité la | publicitA la.mp3
+raisins les (m) | raisins les m.mp3
+rencontrer | rencontrer.mp3
+repas le | repas le.mp3
+riz le | riz le.mp3
+saucisse la | saucisse la.mp3
+saumon le | saumon le.mp3
+sel le | sel le.mp3
+série la | sArie la.mp3
+serveur le/serveuse la | serveur leserveuse la.mp3
+skate le | skate le.mp3
+ski (nautique) le | ski nautique le.mp3
+sports d’hiver les (m) | sports daTMhiver les m.mp3
+stade le | stade le.mp3
+steak haché le | steak hachA le.mp3
+sucre le | sucre le.mp3
+tasse la | tasse la.mp3
+télé réalité la | tAlA rAalitA la.mp3
+temps libre le | temps libre le.mp3
+thé le | thA le.mp3
+thon le | thon le.mp3
+truite la | truite la.mp3
+vedette la | vedette la.mp3
+viande la | viande la.mp3
+voile la | voile la.mp3
+voir | voir.mp3
+volley le | volley le.mp3
+vouloir | vouloir.mp3
+yaourt le | yaourt le.mp3
+s’abonner | saTMabonner.mp3
+ado l’ (m/f) | ado laTM mf.mp3
+ail l’ (m) | ail laTM m.mp3
+amer/amère | ameramA re.mp3
+ananas l’ (m) | ananas laTM m.mp3
+bien cuit | bien cuit.mp3
+chorale la | chorale la.mp3
+course la | course la.mp3
+échecs les (m) | Achecs les m.mp3
+effets spéciaux (m) les | effets spAciaux m les.mp3
+épicé | ApicA.mp3
+espèce l’ (f) | espA ce laTM f.mp3
+féliciter | fAliciter.mp3
+lieu le (avoir lieu) | lieu le avoir lieu.mp3
+marquer un but/un essai | marquer un butun essai.mp3
+noix la | noix la.mp3
+pamplemousse la | pamplemousse la.mp3
+piquant | piquant.mp3
+prune la | prune la.mp3
+séance la | sAance la.mp3
+tournée la | tournAe la.mp3
+tournoi le | tournoi le.mp3
+veau le | veau le.mp3
+allumer | allumer.mp3
+bain le | bain le.mp3
+boîte la (en carton) | boAte la en carton.mp3
+centre de recyclage le | centre de recyclage le.mp3
+chômage le | chA mage le.mp3
+chauffage central le | chauffage central le.mp3
+cultiver | cultiver.mp3
+en danger | en danger.mp3
+déchets les (m) | dAchets les m.mp3
+détruire | dAtruire.mp3
+disparaître | disparaAtre.mp3
+douche la | douche la.mp3
+environnement l’ (m) | environnement laTM m.mp3
+éteindre | Ateindre.mp3
+faire du recyclage | faire du recyclage.mp3
+gaspiller | gaspiller.mp3
+inondation l’ (f) | inondation laTM f.mp3
+jeter | jeter.mp3
+ordures les (f) | ordures les f.mp3
+pauvreté la | pauvretA la.mp3
+pétrole le | pAtrole le.mp3
+piste cyclable la | piste cyclable la.mp3
+pollué | polluA.mp3
+poubelle la | poubelle la.mp3
+protéger | protAger.mp3
+réchauffement de la Terre le | rAchauffement de la Terre le.mp3
+robinet le | robinet le.mp3
+sac en plastique le | sac en plastique le.mp3
+sans-abri le | sans-abri le.mp3
+sauver | sauver.mp3
+utiliser | utiliser.mp3
+agresser | agresser.mp3
+améliorer | amAliorer.mp3
+attaque l’ (f) | attaque laTM f.mp3
+augmenter | augmenter.mp3
+bande la | bande la.mp3
+campagne la | campagne la.mp3
+charbon le | charbon le.mp3
+couche d’ozone la | couche daTMozone la.mp3
+croire | croire.mp3
+déboisement le | dAboisement le.mp3
+effet de serre l’ (m) | effet de serre laTM m.mp3
+effrayant | effrayant.mp3
+égal | Agal.mp3
+emballage l’ (m) | emballage laTM m.mp3
+empêcher | empAacher.mp3
+endommager | endommager.mp3
+énergie renouvelable l’ (f) | Anergie renouvelable laTM f.mp3
+ennui l’ (m) | ennui laTM m.mp3
+entouré | entourA.mp3
+état l’ (m) | Atat laTM m.mp3
+gaz carbonique le | gaz carbonique le.mp3
+gaz d’échappement le | gaz daTMAchappement le.mp3
+guerre la | guerre la.mp3
+harceler | harceler.mp3
+harcèlement le | harcA lement le.mp3
+immigré l’ (m) | immigrA laTM m.mp3
+incendie l’ (m) | incendie laTM m.mp3
+inonder | inonder.mp3
+s’inquiéter | saTMinquiAter.mp3
+lourd | lourd.mp3
+lutter | lutter.mp3
+manifestation la | manifestation la.mp3
+marée la | marAe la.mp3
+mentir | mentir.mp3
+mondial | mondial.mp3
+niveau le | niveau le.mp3
+paix la | paix la.mp3
+paysage le | paysage le.mp3
+(se) plaindre | se plaindre.mp3
+produire | produire.mp3
+produits bio les (m) | produits bio les m.mp3
+ramasser | ramasser.mp3
+reconnaissant | reconnaissant.mp3
+réfugié le | rAfugiA le.mp3
+supporter | supporter.mp3
+supprimer | supprimer.mp3
+souci le | souci le.mp3
+témoin le | tAmoin le.mp3
+trou le | trou le.mp3
+vague la | vague la.mp3
+voler | voler.mp3
+voyou le | voyou le.mp3
+à bientôt | A  bientA t.mp3
+à demain | A  demain.mp3
+à tout à l’heure | A  tout A  laTMheure.mp3
+allô | allA.mp3
+amitiés | amitiAs.mp3
+au secours | au secours.mp3
+bien sûr | bien sAr.mp3
+bienvenue | bienvenue.mp3
+bon anniversaire | bon anniversaire.mp3
+bon appétit | bon appAtit.mp3
+bon voyage | bon voyage.mp3
+bonne année | bonne annAe.mp3
+bonne chance | bonne chance.mp3
+bonne idée | bonne idAe.mp3
+bonne nuit | bonne nuit.mp3
+bonnes vacances | bonnes vacances.mp3
+bonsoir | bonsoir.mp3
+d’accord | daTMaccord.mp3
+de rien | de rien.mp3
+désolé (e) | dAsolA e.mp3
+excusez-moi | excusez-moi.mp3
+félicitations | fAlicitations.mp3
+joyeux Noël | joyeux NoAl.mp3
+meilleurs voeux | meilleurs voeux.mp3
+pardon | pardon.mp3
+quel dommage | quel dommage.mp3
+salut | salut.mp3
+santé | santA.mp3
+s’il te/vous plaît | saTMil tevous plaAt.mp3
+aider | aider.mp3
+animé | animA.mp3
+arbre l’ (m) | arbre laTM m.mp3
+armoire l’ (f) | armoire laTM f.mp3
+bâtiment le | bAtiment le.mp3
+besoin le (avoir	de) | besoin le avoirde.mp3
+bibliothèque la | bibliothA que la.mp3
+boucherie la | boucherie la.mp3
+baskets les (f) | baskets les f.mp3
+boulangerie la | boulangerie la.mp3
+bijou le | bijou le.mp3
+bijouterie la | bijouterie la.mp3
+blouson le | blouson le.mp3
+bon marché | bon marchA.mp3
+bruit le | bruit le.mp3
+bureau le | bureau le.mp3
+bruyant | bruyant.mp3
+caisse la | caisse la.mp3
+calme | calme.mp3
+campagne la | campagne la.mp3
+carte bancaire la | carte bancaire la.mp3
+cave la | cave la.mp3
+ceinture la | ceinture la.mp3
+célèbre | cAlA bre.mp3
+centre commercial le | centre commercial le.mp3
+champ le | champ le.mp3
+chapeau le | chapeau le.mp3
+charcuterie la | charcuterie la.mp3
+chaussette la | chaussette la.mp3
+chaussure la | chaussure la.mp3
+chemise la | chemise la.mp3
+choix le | choix le.mp3
+chose la | chose la.mp3
+circulation la | circulation la.mp3
+commerces les (m) | commerces les m.mp3
+colline la | colline la.mp3
+commissariat le | commissariat le.mp3
+cravate la | cravate la.mp3
+cuisine la | cuisine la.mp3
+déménager | dAmAnager.mp3
+démodé | dAmodA.mp3
+dépenser | dApenser.mp3
+devoir | devoir.mp3
+économiser | Aconomiser.mp3
+escalier l’ (m) | escalier laTM m.mp3
+essayer | essayer.mp3
+étage l’ (m) | Atage laTM m.mp3
+fenêtre la | fenAatre la.mp3
+ferme la | ferme la.mp3
+fleur la | fleur la.mp3
+gare la | gare la.mp3
+gare routière la | gare routiA re la.mp3
+gens les (m) | gens les m.mp3
+gilet le | gilet le.mp3
+grand magasin le | grand magasin le.mp3
+gratuit | gratuit.mp3
+habitant l’ (m) | habitant laTM m.mp3
+hôtel de ville l’ (m) | hA tel de ville laTM m.mp3
+immeuble l’ (m) | immeuble laTM m.mp3
+jardinage le | jardinage le.mp3
+jupe la | jupe la.mp3
+laver | laver.mp3
+librairie la | librairie la.mp3
+livrer | livrer.mp3
+maison la (individuelle/jumelée/mitoyenne) | maison la individuellejumelAemitoyenne.mp3
+mairie la | mairie la.mp3
+manteau le | manteau le.mp3
+marché le | marchA le.mp3
+meubles les (m) | meubles les m.mp3
+mode la | mode la.mp3
+(à la) montagne la | A  la montagne la.mp3
+mur le | mur le.mp3
+musée le | musAe le.mp3
+nettoyer | nettoyer.mp3
+pantalon le | pantalon le.mp3
+parc le | parc le.mp3
+parfum le | parfum le.mp3
+pâtisserie la | pAtisserie la.mp3
+pauvre | pauvre.mp3
+perdre | perdre.mp3
+pièce la | piA ce la.mp3
+place la | place la.mp3
+portefeuille le | portefeuille le.mp3
+porte-monnaie le | porte-monnaie le.mp3
+poser | poser.mp3
+poste la | poste la.mp3
+pouvoir | pouvoir.mp3
+prix le | prix le.mp3
+propre | propre.mp3
+pull le | pull le.mp3
+quartier le | quartier le.mp3
+quitter | quitter.mp3
+ranger | ranger.mp3
+réduire | rAduire.mp3
+réduit | rAduit.mp3
+rez-de-chaussée le | rez-de-chaussAe le.mp3
+risque le | risque le.mp3
+robe la | robe la.mp3
+sale | sale.mp3
+salle à manger la | salle A  manger la.mp3
+salle de bains la | salle de bains la.mp3
+salon le | salon le.mp3
+sécurité la | sAcuritA la.mp3
+soldes les (m) | soldes les m.mp3
+sous-sol le | sous-sol le.mp3
+station-service la | station-service la.mp3
+tabac le | tabac le.mp3
+transport en commun le | transport en commun le.mp3
+travailler | travailler.mp3
+se trouver | se trouver.mp3
+usine l’ (f) | usine laTM f.mp3
+vendeur le/vendeuse la | vendeur levendeuse la.mp3
+vendre | vendre.mp3
+veste la | veste la.mp3
+vêtements les (m) | vAatements les m.mp3
+vie la | vie la.mp3
+ville la | ville la.mp3
+vitrine la | vitrine la.mp3
+vivre | vivre.mp3
+voisin le | voisin le.mp3
+zone piétonne la | zone piAtonne la.mp3
+bricolage le | bricolage le.mp3
+distractions les (f) | distractions les f.mp3
+écharpe l’ (f) | Acharpe laTM f.mp3
+embouteillage l’ (m) | embouteillage laTM m.mp3
+endroit l’ (m) | endroit laTM m.mp3
+fermeture la | fermeture la.mp3
+foulard le | foulard le.mp3
+four le | four le.mp3
+foyer le | foyer le.mp3
+garder | garder.mp3
+grande surface la | grande surface la.mp3
+lèche-vitrine le (faire du) | lA che-vitrine le faire du.mp3
+loyer le | loyer le.mp3
+lumière la | lumiA re la.mp3
+marque la | marque la.mp3
+pelouse la | pelouse la.mp3
+pull à capuche le | pull A  capuche le.mp3
+rayon le | rayon le.mp3
+rembourser | rembourser.mp3
+surchargé | surchargA.mp3
+tâche la | tAche la.mp3
+agent de police l’ (m) | agent de police laTM m.mp3
+avenir l’ (m) | avenir laTM m.mp3
+boucher le | boucher le.mp3
+boulanger le | boulanger le.mp3
+boulot le | boulot le.mp3
+candidat le | candidat le.mp3
+coiffeur le | coiffeur le.mp3
+compter (sur) | compter sur.mp3
+employé(e) l' | employAe l.mp3
+employeur l' | employeur l.mp3
+espérer | espArer.mp3
+facteur le | facteur le.mp3
+fermier le | fermier le.mp3
+gagner | gagner.mp3
+idée l’ (f) | idAe laTM f.mp3
+infirmier l’ (m) | infirmier laTM m.mp3
+informaticien l’ | informaticien laTM.mp3
+ingénieur l’ (m) | ingAnieur laTM m.mp3
+journal le | journal le.mp3
+livre la (sterling) | livre la sterling.mp3
+maçon le | maAon le.mp3
+mécanicien le | mAcanicien le.mp3
+mettre de l’argent de côté | mettre de laTMargent de cA tA.mp3
+patron le; patronne la | patron le patronne la.mp3
+petit job le | petit job le.mp3
+plombier le | plombier le.mp3
+policier le | policier le.mp3
+rêve le | rAave le.mp3
+rêver | rAaver.mp3
+recevoir | recevoir.mp3
+varié | variA.mp3
+vétérinaire le | vAtArinaire le.mp3
+à peine | A  peine.mp3
+assis | assis.mp3
+avocat l’ (m) | avocat laTM m.mp3
+comptable le | comptable le.mp3
+croisière la | croisiA re la.mp3
+débouché le | dAbouchA le.mp3
+debout | debout.mp3
+dessinateur de mode le | dessinateur de mode le.mp3
+disponible | disponible.mp3
+élargir | Alargir.mp3
+entreprise l’ (f) | entreprise laTM f.mp3
+entretien l’ (m) | entretien laTM m.mp3
+enrichissant | enrichissant.mp3
+espoir l’ (m) | espoir laTM m.mp3
+interprète l’ (m) | interprA te laTM m.mp3
+outil l’ (m) | outil laTM m.mp3
+venir de | venir de.mp3
+apprendre | apprendre.mp3
+calculette la | calculette la.mp3
+collège le | collA ge le.mp3
+comprendre | comprendre.mp3
+cours le | cours le.mp3
+demander | demander.mp3
+devoirs les (m) | devoirs les m.mp3
+difficulté la | difficultA la.mp3
+diplôme le | diplA me le.mp3
+directeur le | directeur le.mp3
+directrice la | directrice la.mp3
+discuter | discuter.mp3
+distribuer | distribuer.mp3
+droit le | droit le.mp3
+école l’ (f) (primaire/secondaire) | Acole laTM f primairesecondaire.mp3
+élève l’ (m/f) | AlA ve laTM mf.mp3
+emploi du temps l’ (m) | emploi du temps laTM m.mp3
+en seconde | en seconde.mp3
+études les (f) | Atudes les f.mp3
+étudiant l’ (m) | Atudiant laTM m.mp3
+examen l’ (m) | examen laTM m.mp3
+faire attention | faire attention.mp3
+leçon la | leAon la.mp3
+lecture la | lecture la.mp3
+lire | lire.mp3
+maquillage le | maquillage le.mp3
+note la | note la.mp3
+oublier | oublier.mp3
+passer un examen | passer un examen.mp3
+pause la | pause la.mp3
+penser | penser.mp3
+permettre | permettre.mp3
+porter | porter.mp3
+pression la | pression la.mp3
+récré(ation) la | rAcrAation la.mp3
+règle la | rA gle la.mp3
+règlement le | rA glement le.mp3
+rentrée la | rentrAe la.mp3
+répéter | rApAter.mp3
+réponse la | rAponse la.mp3
+résultat le | rAsultat le.mp3
+réussir un examen | rAussir un examen.mp3
+salle de classe la | salle de classe la.mp3
+savoir | savoir.mp3
+scolaire | scolaire.mp3
+tableau le | tableau le.mp3
+terrain de sport le | terrain de sport le.mp3
+trimestre le | trimestre le.mp3
+trouver | trouver.mp3
+bien équipé | bien AquipA.mp3
+bulletin scolaire le | bulletin scolaire le.mp3
+car de ramassage le | car de ramassage le.mp3
+couloir le | couloir le.mp3
+doué | douA.mp3
+échouer | Achouer.mp3
+enseigner | enseigner.mp3
+incivilités les (f) | incivilitAs les f.mp3
+injure l' (f) | injure l f.mp3
+mal équipé | mal AquipA.mp3
+maternelle la | maternelle la.mp3
+redoubler | redoubler.mp3
+retenue la | retenue la.mp3
+à droite | A  droite.mp3
+à gauche | A  gauche.mp3
+banlieue la | banlieue la.mp3
+centre-ville le | centre-ville le.mp3
+campagne la | campagne la.mp3
+chez | chez.mp3
+de chaque côté | de chaque cA tA.mp3
+de l’autre côté | de laTMautre cA tA.mp3
+en bas | en bas.mp3
+en haut | en haut.mp3
+est l' (m) | est l m.mp3
+ici | ici.mp3
+là | lA.mp3
+là-bas | lA -bas.mp3
+loin de | loin de.mp3
+nord le | nord le.mp3
+nulle part | nulle part.mp3
+ouest l' (m) | ouest l m.mp3
+par | par.mp3
+partout | partout.mp3
+quelque part | quelque part.mp3
+situé (e) | situA e.mp3
+sud le | sud le.mp3
+tout droit | tout droit.mp3
+tout près | tout prA s.mp3
+toutes directions | toutes directions.mp3
+ville la | ville la.mp3
+argent l' (m) | argent l m.mp3
+béton le | bAton le.mp3
+bois le | bois le.mp3
+cuir le | cuir le.mp3
+fer le | fer le.mp3
+laine la | laine la.mp3
+or l' (m) | or l m.mp3
+soie la | soie la.mp3
+verre le | verre le.mp3
+aimable | aimable.mp3
+aîné | aAnA.mp3
+amour l’ (m) | amour laTM m.mp3
+s’appeler | saTMappeler.mp3
+avoir...ans | avoir...ans.mp3
+barbe la | barbe la.mp3
+bavard | bavard.mp3
+beau/belle/bel | beaubellebel.mp3
+beau-père le | beau-pA re le.mp3
+belle-mère la | belle-mA re la.mp3
+bête | bAate.mp3
+bouclé | bouclA.mp3
+célibataire | cAlibataire.mp3
+cheveux les (m) | cheveux les m.mp3
+copain le/copine la | copain lecopine la.mp3
+court | court.mp3
+demi-frère le | demi-frA re le.mp3
+demi-sœur la | demi-sAur la.mp3
+se disputer | se disputer.mp3
+dire | dire.mp3
+égoïste | AgoA ste.mp3
+ensemble | ensemble.mp3
+s’entendre (avec) | saTMentendre avec.mp3
+fâché | fAchA.mp3
+se faire des amis | se faire des amis.mp3
+femme la | femme la.mp3
+fille la | fille la.mp3
+fils le | fils le.mp3
+frisé | frisA.mp3
+généreux/généreuse | gAnAreuxgAnAreuse.mp3
+gentil/gentille | gentilgentille.mp3
+grand-mère la | grand-mA re la.mp3
+grand-père le | grand-pA re le.mp3
+grands-parents les (m) | grands-parents les m.mp3
+gros/grosse | grosgrosse.mp3
+heureux/heureuse | heureuxheureuse.mp3
+injuste | injuste.mp3
+jeune | jeune.mp3
+joli | joli.mp3
+laid | laid.mp3
+long/longue | longlongue.mp3
+lunettes les (f) | lunettes les f.mp3
+mari le | mari le.mp3
+se marier | se marier.mp3
+méchant | mAchant.mp3
+mi-long | mi-long.mp3
+mort | mort.mp3
+naissance la | naissance la.mp3
+né(e) le... | nAe le.mp3
+nom le | nom le.mp3
+paresseux/paresseuse | paresseuxparesseuse.mp3
+partager | partager.mp3
+partenaire le/la | partenaire lela.mp3
+pénible | pAnible.mp3
+petit ami le | petit ami le.mp3
+petite amie la | petite amie la.mp3
+petite-fille la | petite-fille la.mp3
+petit-fils le | petit-fils le.mp3
+prénom le | prAnom le.mp3
+raide | raide.mp3
+rapports les (m) | rapports les m.mp3
+sens de l’humour le | sens de laTMhumour le.mp3
+séparé | sAparA.mp3
+sortir | sortir.mp3
+sportif/sportive | sportifsportive.mp3
+sympa | sympa.mp3
+de taille moyenne | de taille moyenne.mp3
+tante la | tante la.mp3
+timide | timide.mp3
+tranquille | tranquille.mp3
+travailleur/travailleuse | travailleurtravailleuse.mp3
+triste | triste.mp3
+unique | unique.mp3
+vieux/vieil/vieille | vieuxvieilvieille.mp3
+yeux les (m) | yeux les m.mp3
+bague la | bague la.mp3
+bouton le | bouton le.mp3
+compréhensif/compréhensive | comprAhensifcomprAhensive.mp3
+confiance la | confiance la.mp3
+connaître | connaAtre.mp3
+de mauvaise humeur | de mauvaise humeur.mp3
+épouser | Apouser.mp3
+esprit l’ (m) | esprit laTM m.mp3
+étonnant | Atonnant.mp3
+étrange | Atrange.mp3
+fiançailles les (f) | fianAailles les f.mp3
+fier/fière | fierfiA re.mp3
+fou/folle | foufolle.mp3
+gâter | gAter.mp3
+gêner | gAaner.mp3
+jaloux/jalouse | jalouxjalouse.mp3
+jumeau le/jumelle la | jumeau lejumelle la.mp3
+jeunesse la | jeunesse la.mp3
+marre (en avoir) | marre en avoir.mp3
+mépriser | mApriser.mp3
+se mettre en colère | se mettre en colA re.mp3
+mourir | mourir.mp3
+naître | naAtre.mp3
+neveu le | neveu le.mp3
+les noces (f) | les noces f.mp3
+ondulé | ondulA.mp3
+se rendre compte | se rendre compte.mp3
+(se) séparer | se sAparer.mp3
+vif/vive | vifvive.mp3
+chimie la | chimie la.mp3
+dessin le | dessin le.mp3
+EPS l’ (f) | EPS laTM f.mp3
+français le | franAais le.mp3
+informatique (l’) (f) | informatique laTM f.mp3
+instituteur l’ (m) | instituteur laTM m.mp3
+institutrice l’ (f) | institutrice laTM f.mp3
+langue la | langue la.mp3
+matière la | matiA re la.mp3
+physique la | physique la.mp3
+professeur le | professeur le.mp3
+religion la | religion la.mp3
+couture la | couture la.mp3
+langues vivantes les (f) | langues vivantes les f.mp3
+instruction civique l’ (f) | instruction civique laTM f.mp3
+proviseur le | proviseur le.mp3
+ne...jamais | ne...jamais.mp3
+ne…pas | neapas.mp3
+ne...personne | ne...personne.mp3
+ne...plus | ne...plus.mp3
+ne…que | neaque.mp3
+ne…rien | nearien.mp3
+ni…ni | niani.mp3
+pas encore | pas encore.mp3
+dizaine une | dizaine une.mp3
+douzaine une | douzaine une.mp3
+nombre de | nombre de.mp3

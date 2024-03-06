@@ -139,13 +139,11 @@ public class Vocabulary : MonoBehaviour
         if (!IsTopicInVocabulary(topic))
         {
             AddTopicToVocabMap(topic);
-            PrintToDebug();
             return true;
         }
         else
         {
             RemoveTopicVocab(topic);
-            PrintToDebug();
             return false;
         }
 

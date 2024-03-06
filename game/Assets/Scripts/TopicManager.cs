@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,10 @@ public class TopicManager : MonoBehaviour
     public GameObject buttonPrefab;
     // The content parameter of the scroll view on which to instatiate buttons
     public Transform contentTransform;
+    public Button learnButton;
+    public Button startGameButton;
+    public Button scoreboardButton;
+    private int _activeTopicButtons;
 
     /*
     This method obtains a list of CSV filenames from the FileUtil. For each
@@ -20,8 +25,25 @@ public class TopicManager : MonoBehaviour
      */
     public void Start()
     {
-        List<string> csvFiles = FileUtil.GetFileNames("Assets/CSV");
+        // Clear the vocabulary map
+        Vocabulary vocabulary = FindObjectOfType<Vocabulary>();
+        vocabulary.vocabMap.Clear();
+
+        // Set the active topic buttons to 0
+        _activeTopicButtons = 0;
         
+        // Add a listener to the start game button
+        startGameButton.onClick.AddListener(StartGame);
+        // Add a listener to the learn button
+        learnButton.onClick.AddListener(Learn);
+        // Add a listener to the scoreboard button
+        scoreboardButton.onClick.AddListener(ScoreBoard);
+        
+        // Disable the learn and start game buttons
+        learnButton.interactable = false;
+        startGameButton.interactable = false;
+        
+        List<string> csvFiles = FileUtil.GetFileNames("Assets/CSV");
         foreach(string topic in csvFiles)
         {
             CreateButton(topic);
@@ -40,4 +62,59 @@ public class TopicManager : MonoBehaviour
         buttonComponent.GetComponentInChildren<Text>().text = buttonText;
         buttonObject.name = buttonText;
     }
+
+    /*
+     * Increments the activeTopicButtons counter
+     */
+    public void LogButtonActivation()
+    {
+        _activeTopicButtons++;
+        ChangeButtonsActiveStatus();
+    }
+
+    /*
+     * Decrements the activeTopicButtons counter
+     */
+    public void LogButtonDeactivation()
+    {
+        _activeTopicButtons--;
+        ChangeButtonsActiveStatus();
+    }
+
+    /*
+     *Activates or deactivates the learn button based on the output of AreButtonsActive()
+     */
+    private void ChangeButtonsActiveStatus()
+    {
+        learnButton.interactable = AreTopicButtonsActive();
+        startGameButton.interactable = AreTopicButtonsActive();
+    }
+
+    /*
+     * Returns true if there is at least 1 topic button selected
+     */
+    public bool AreTopicButtonsActive()
+    {
+        return _activeTopicButtons > 0;
+    }
+
+    // Callback for the start game button
+    private void StartGame()
+    {
+        // Load the game scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+    }
+
+    // Callback for the learn button
+    private void Learn()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LearnScene");
+    }
+    
+    // Callback for the scoreboard button
+    private void ScoreBoard()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ScoreBoardScene");
+    }
+
 }

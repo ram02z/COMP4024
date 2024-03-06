@@ -18,7 +18,6 @@ public class DebugObject : MonoBehaviour
         else
         {
             Debug.Log("Vocabulary does not exist");
-
         }
     }
 

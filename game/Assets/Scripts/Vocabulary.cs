@@ -87,6 +87,24 @@ public class Vocabulary : MonoBehaviour
     }
 
     /*
+     Get only the vocabulary contained in the vocabMap excluding all topics
+     */
+    public virtual Dictionary<string, string> GetVocabularyOnly()
+    {
+        Dictionary<string, string> vocabulary = new Dictionary<string, string>();
+
+        foreach (KeyValuePair<string, Dictionary<string, string>> translationDictionary in vocabMap)
+        {
+            foreach (KeyValuePair<string, string> kvp in translationDictionary.Value)
+            {
+                vocabulary[kvp.Key] = kvp.Value;
+            }
+        }
+
+        return vocabulary;
+    }
+
+    /*
      Checks if the given topic string exists as a key in the vocabMap.
     Returns true if the key is present else false
     */
@@ -121,13 +139,11 @@ public class Vocabulary : MonoBehaviour
         if (!IsTopicInVocabulary(topic))
         {
             AddTopicToVocabMap(topic);
-            PrintToDebug();
             return true;
         }
         else
         {
             RemoveTopicVocab(topic);
-            PrintToDebug();
             return false;
         }
 

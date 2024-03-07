@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TopicScene.unity
     guid: 010c8a7977197b142bf71e201d787033
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/PopupScene.unity
     guid: c913e23cac37226419b18ba4bcdd2d28
   - enabled: 1
     path: Assets/Scenes/LearnScene.unity

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,7 +60,9 @@ public class TopicManager : MonoBehaviour
         GameObject buttonObject = Instantiate(buttonPrefab, contentTransform);
         buttonObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(50f, 50f);
         UnityEngine.UI.Button buttonComponent = buttonObject.GetComponent<UnityEngine.UI.Button>();
-        buttonComponent.GetComponentInChildren<Text>().text = buttonText;
+        buttonComponent.GetComponentInChildren<TextMeshProUGUI>().text = buttonText;
+        buttonComponent.GetComponentInChildren<TextMeshProUGUI>().color = Color.black;
+
         buttonObject.name = buttonText;
     }
 

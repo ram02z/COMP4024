@@ -42,7 +42,7 @@ public class WordManager : MonoBehaviour
     }
 
     // This method returns the current word from the wordQueue in English.
-    private string GetCurrentEnglishWord()
+    public string GetCurrentEnglishWord()
     {
         return wordTranslations[GetCurrentFrenchWord()];
     }

@@ -122,8 +122,8 @@ public class Vocabulary : MonoBehaviour
      */
     private void AddTopicToVocabMap(string topic)
     {
-        string csvFilepath = "Assets/CSV/" + topic;
-        Dictionary<string, string> csvValues = FileUtil.ReadCSVFile(csvFilepath);
+        string csvFilename = "CSV/" + topic;
+        Dictionary<string, string> csvValues = FileUtil.ReadCSVFile(csvFilename);
         AddTopicVocab(topic, csvValues);
     }
 

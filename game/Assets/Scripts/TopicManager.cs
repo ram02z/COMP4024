@@ -44,7 +44,7 @@ public class TopicManager : MonoBehaviour
         learnButton.interactable = false;
         startGameButton.interactable = false;
         
-        List<string> csvFiles = FileUtil.GetFileNames("Assets/CSV");
+        List<string> csvFiles = FileUtil.GetFileNames("CSV/");
         foreach(string topic in csvFiles)
         {
             CreateButton(topic);

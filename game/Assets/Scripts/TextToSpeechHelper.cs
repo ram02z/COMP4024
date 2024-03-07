@@ -7,33 +7,30 @@ public class TextToSpeechHelper : MonoBehaviour
 {
     public static string GetMapping(string originalText)
     {
-        // Define the file path (adjust as needed)
-        const string mappingFilePath = "Assets/Resources/text_to_mp3_mapping.txt";
+        TextAsset mappingFile = Resources.Load<TextAsset>("text_to_mp3_mapping");
 
-        // Attempt to open the file and read lines
-        if (!File.Exists(mappingFilePath))
+        // Check if the file was loaded successfully
+        if (mappingFile == null)
         {
             return null; // File not found
         }
 
-        using (StreamReader reader = new StreamReader(mappingFilePath, Encoding.UTF8))
+        // Split the text into lines
+        string[] lines = mappingFile.text.Split('\n');
+
+        foreach (string line in lines)
         {
-            string line;
-            while ((line = reader.ReadLine()) != null)
+            // Split the line based on the delimiter
+            string[] parts = line.Trim().Split(new string[] { " | " }, StringSplitOptions.None);
+
+            // Extract text and filename
+            string lineText = parts[0];
+            string filename = parts.Length > 1 ? parts[1] : null;
+
+            // Check for matching text
+            if (originalText == lineText)
             {
-                // Split the line based on the delimiter
-                string[] parts = line.Trim().Split(new string[] { " | " }, StringSplitOptions.None);
-
-
-                // Extract text and filename
-                string lineText = parts[0];
-                string filename = parts.Length > 1 ? parts[1] : null;
-
-                // Check for matching text
-                if (originalText == lineText)
-                {
-                    return filename;
-                }
+                return filename;
             }
         }
 

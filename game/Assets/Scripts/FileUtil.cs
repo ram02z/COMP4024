@@ -15,40 +15,38 @@ public class FileUtil : MonoBehaviour
      Reads the csv file with the given filepath and converts the contents
     to a disctionary of strings
      */
-    public static Dictionary<string, string> ReadCSVFile(string filePath)
+    public static Dictionary<string, string> ReadCSVFile(string fileName)
     {
         Dictionary<string, string> vocabulary = new Dictionary<string, string>();
-        try
+
+        TextAsset csvData = Resources.Load<TextAsset>(fileName);
+
+        if (csvData == null)
         {
-            using (StreamReader reader = new StreamReader(filePath))
-            {
-                reader.ReadLine();
-                while (!reader.EndOfStream)
-                {
-                    string line = reader.ReadLine();
-                    string[] fields = line.Split(',');
-
-                    if (fields.Length > 2)
-                    {
-                        string english = string.Join(", ", fields, 1, fields.Length - 1).Trim();
-                        string french = fields[0].Trim();
-                        Debug.Log("french word is " + french);
-                        Debug.Log("english word is " + english);
-                        vocabulary.Add(french, english);
-                    }
-                    else if (fields.Length == 2)
-                    {
-                        string english = fields[1].Trim();
-                        string french = fields[0].Trim();
-                        vocabulary.Add(french, english);
-                    }
-
-                }
-            }
+            Debug.Log($"File not found: {fileName}");
+            return vocabulary;
         }
-        catch (IOException e)
+
+        string[] lines = csvData.text.Split('\n');
+
+        foreach (string line in lines.Skip(1))
         {
-            Debug.Log($"Error reading CSV file: {e.Message}");
+            string[] fields = line.Split(',');
+
+            if (fields.Length > 2)
+            {
+                string english = string.Join(", ", fields, 1, fields.Length - 1).Trim();
+                string french = fields[0].Trim();
+                Debug.Log("french word: " + french);
+                Debug.Log("english word: " + english);
+                vocabulary.Add(french, english);
+            }
+            else if (fields.Length == 2)
+            {
+                string english = fields[1].Trim();
+                string french = fields[0].Trim();
+                vocabulary.Add(french, english);
+            }
         }
 
         return vocabulary;
@@ -59,19 +57,24 @@ public class FileUtil : MonoBehaviour
     */
     public static List<string> GetFileNames(string directoryPath)
     {
-        if (Directory.Exists(directoryPath))
-        {
-            List<string> filePaths = Directory.GetFiles(directoryPath).ToList();
-            List<string> fileNames = new List<string>();
-            fileNames = filePaths.Where(filePath => !filePath.EndsWith(".meta")).Select(Path.GetFileName).ToList();
+        // Load all TextAssets from the given directory in the Resources folder
+        TextAsset[] files = Resources.LoadAll<TextAsset>(directoryPath);
 
-            return fileNames;
-        }
-        else
+        // If no files were found, log a message and return null
+        if (files.Length == 0)
         {
-            Debug.Log("Directory does not exist: " + directoryPath);
-            return null;
+            Debug.Log("No files found in directory: " + directoryPath);
+            return new List<string>();
         }
+
+        // Extract the names of the files
+        List<string> fileNames = new List<string>();
+        foreach (TextAsset file in files)
+        {
+            fileNames.Add(file.name);
+        }
+
+        return fileNames;
     }
 
     /*

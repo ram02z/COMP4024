@@ -10,12 +10,12 @@ namespace Tests.EditMode
 {
     public class FileUtilTetsts
     {
-        private string validCSVFile = "Assets/Tests/EditMode/TestCSVs/valid";
-        private string invalidCSVFile = "Assets/Tests/EditMode/TestCSVs/invalid";
-        private string emptyCSVFile = "Assets/Tests/EditMode/TestCSVs/empty";
-        private string invalidCSVPath = "Assets/Tests/EditMode/TestCSVs/non_existent";
-        private string testCSVDirectory = "Assets/Tests/EditMode/TestCSVs";
-        private string invalidDirectory = "Assets/Tests/EditMode/non_existent";
+        private string validCSVFile = "Tests/CSV/valid";
+        private string invalidCSVFile = "Tests/CSV/invalid";
+        private string emptyCSVFile = "Tests/CSV/empty";
+        private string invalidCSVPath = "Tests/CSV/non_existent";
+        private string testCSVDirectory = "Tests/CSV/";
+        private string invalidDirectory = "Tests/non_existent";
 
 
 
@@ -71,10 +71,10 @@ namespace Tests.EditMode
         }
 
         [Test]
-        public void GetFileNames_WhenDirectoryDoesNotExist_ReturnsNull()
+        public void GetFileNames_WhenDirectoryDoesNotExist_ReturnsEmpty()
         {
             List<string> filenameContent = FileUtil.GetFileNames(invalidDirectory);
-            Assert.Null(filenameContent);
+            Assert.IsEmpty(filenameContent);
         }
     }
 }
